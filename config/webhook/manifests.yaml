@@ -24,3 +24,23 @@ webhooks:
     resources:
     - tasks
   sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-workflow-kmambo-io-v1alpha1-workflow
+  failurePolicy: Fail
+  name: vworkflow.kb.io
+  rules:
+  - apiGroups:
+    - workflow.kmambo.io
+    apiVersions:
+    - v1alpha1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - workflows
+  sideEffects: None
