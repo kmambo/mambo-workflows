@@ -9,4 +9,24 @@ metadata:
     app.kubernetes.io/created-by: kmambo-workflows
   name: workflow-sample
 spec:
-  # TODO(user): Add fields here
+  tasks:
+    - name: iot-data-ingestion-task
+      namespace: iot-workflow-ns
+      events:
+        src:
+          type: service
+          name: iot-http-push
+          init: true
+        dst:
+          type: queue
+          name: iot-pubsub
+    - name: iot-data-pii-filter-task
+      namespace: iot-workflow-ns
+      events:
+        src:
+          type: queue
+          name: iot-pubsub
+        dst:
+          type: database
+          name: iot-datalake
+          final: true
