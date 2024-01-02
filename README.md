@@ -1,4 +1,4 @@
-# kmambo-webhooks
+# kmambo-workflows
 // TODO(user): Add simple overview of use/purpose
 
 ## Description
@@ -18,13 +18,13 @@ kubectl apply -f config/samples/
 2. Build and push your image to the location specified by `IMG`:
 
 ```sh
-make docker-build docker-push IMG=<some-registry>/kmambo-webhooks:tag
+make docker-build docker-push IMG=<some-registry>/kmambo-workflows:tag
 ```
 
 3. Deploy the controller to the cluster with the image specified by `IMG`:
 
 ```sh
-make deploy IMG=<some-registry>/kmambo-webhooks:tag
+make deploy IMG=<some-registry>/kmambo-workflows:tag
 ```
 
 ### Uninstall CRDs
@@ -78,7 +78,7 @@ More information can be found via the [Kubebuilder Documentation](https://book.k
 
 ## License
 
-Copyright 2023.
+Copyright 2024.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

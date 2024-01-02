@@ -4,9 +4,9 @@ metadata:
   labels:
     app.kubernetes.io/name: task
     app.kubernetes.io/instance: task-sample
-    app.kubernetes.io/part-of: kmambo-webhooks
+    app.kubernetes.io/part-of: kmambo-workflows
     app.kubernetes.io/managed-by: kustomize
-    app.kubernetes.io/created-by: kmambo-webhooks
+    app.kubernetes.io/created-by: kmambo-workflows
   name: task-sample
 spec:
   # TODO(user): Add fields here
