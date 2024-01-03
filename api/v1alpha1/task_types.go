@@ -14,18 +14,14 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-// +kubebuilder:object:generate=true
 package v1alpha1
 
 import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	corev1 "k8s.io/client-go/applyconfigurations/core/v1"
-	v1 "k8s.io/client-go/applyconfigurations/meta/v1"
 )
 
-// +kubebuilder:object:root=true
-type TaskLabelSelectorApplyConfiguration v1.LabelSelectorApplyConfiguration
-
+// TaskSpecApplyConfiguration is the same as the PodSpec except it
 // +kubebuilder:object:root=true
 type TaskSpecApplyConfiguration corev1.PodSpecApplyConfiguration
 
@@ -38,7 +34,6 @@ type TaskSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	Selector *TaskLabelSelectorApplyConfiguration `json:"selector,omitempty"`
 	// +kubebuilder:validation:Required
 	Template *TaskSpecApplyConfiguration `json:"template,omitempty"`
 }

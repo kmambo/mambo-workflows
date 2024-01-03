@@ -37,7 +37,49 @@ spec:
               foo:
                 description: Foo is an example field of Workflow. Edit workflow_types.go
                   to remove/update
-                type: string
+                items:
+                  description: TaskRefSpec defines the Task name so
+                  properties:
+                    events:
+                      items:
+                        properties:
+                          dst:
+                            properties:
+                              name:
+                                type: string
+                              type:
+                                type: string
+                            required:
+                            - name
+                            - type
+                            type: object
+                          src:
+                            properties:
+                              init:
+                                default: true
+                                type: boolean
+                              name:
+                                type: string
+                              type:
+                                type: string
+                            required:
+                            - name
+                            - type
+                            type: object
+                        required:
+                        - dst
+                        - src
+                        type: object
+                      type: array
+                    name:
+                      type: string
+                    namespace:
+                      type: string
+                  required:
+                  - name
+                  - namespace
+                  type: object
+                type: array
             type: object
           status:
             description: WorkflowStatus defines the observed state of Workflow

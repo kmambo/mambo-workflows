@@ -34,36 +34,9 @@ spec:
           spec:
             description: TaskSpec defines the desired state of Task
             properties:
-              selector:
-                description: LabelSelectorApplyConfiguration represents an declarative
-                  configuration of the LabelSelector type for use with apply.
-                properties:
-                  matchExpressions:
-                    items:
-                      description: LabelSelectorRequirementApplyConfiguration represents
-                        an declarative configuration of the LabelSelectorRequirement
-                        type for use with apply.
-                      properties:
-                        key:
-                          type: string
-                        operator:
-                          description: A label selector operator is the set of operators
-                            that can be used in a selector requirement.
-                          type: string
-                        values:
-                          items:
-                            type: string
-                          type: array
-                      type: object
-                    type: array
-                  matchLabels:
-                    additionalProperties:
-                      type: string
-                    type: object
-                type: object
               template:
-                description: PodSpecApplyConfiguration represents an declarative configuration
-                  of the PodSpec type for use with apply.
+                description: TaskSpecApplyConfiguration is the same as the PodSpec
+                  except it
                 properties:
                   activeDeadlineSeconds:
                     format: int64
