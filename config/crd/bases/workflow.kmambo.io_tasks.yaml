@@ -3,7 +3,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.12.0
+    controller-gen.kubebuilder.io/version: v0.14.0
   name: tasks.workflow.kmambo.io
 spec:
   group: workflow.kmambo.io
@@ -20,14 +20,19 @@ spec:
         description: Task is the Schema for the tasks API
         properties:
           apiVersion:
-            description: 'APIVersion defines the versioned schema of this representation
-              of an object. Servers should convert recognized schemas to the latest
-              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
             type: string
           kind:
-            description: 'Kind is a string value representing the REST resource this
-              object represents. Servers may infer this from the endpoint the client
-              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
             type: string
           metadata:
             type: object
@@ -35,8 +40,9 @@ spec:
             description: TaskSpec defines the desired state of Task
             properties:
               template:
-                description: PodSpecApplyConfiguration represents a declarative configuration
-                  of the PodSpec type for use with apply.
+                description: |-
+                  PodSpecApplyConfiguration represents a declarative configuration of the PodSpec type for use
+                  with apply.
                 properties:
                   activeDeadlineSeconds:
                     format: int64
@@ -44,25 +50,25 @@ spec:
                   affinity:
                     properties:
                       nodeAffinity:
-                        description: NodeAffinityApplyConfiguration represents a declarative
-                          configuration of the NodeAffinity type for use with apply.
+                        description: |-
+                          NodeAffinityApplyConfiguration represents a declarative configuration of the NodeAffinity type for use
+                          with apply.
                         properties:
                           preferredDuringSchedulingIgnoredDuringExecution:
                             items:
-                              description: PreferredSchedulingTermApplyConfiguration
-                                represents a declarative configuration of the PreferredSchedulingTerm
-                                type for use with apply.
+                              description: |-
+                                PreferredSchedulingTermApplyConfiguration represents a declarative configuration of the PreferredSchedulingTerm type for use
+                                with apply.
                               properties:
                                 preference:
-                                  description: NodeSelectorTermApplyConfiguration
-                                    represents a declarative configuration of the
-                                    NodeSelectorTerm type for use with apply.
+                                  description: |-
+                                    NodeSelectorTermApplyConfiguration represents a declarative configuration of the NodeSelectorTerm type for use
+                                    with apply.
                                   properties:
                                     matchExpressions:
                                       items:
-                                        description: NodeSelectorRequirementApplyConfiguration
-                                          represents a declarative configuration of
-                                          the NodeSelectorRequirement type for use
+                                        description: |-
+                                          NodeSelectorRequirementApplyConfiguration represents a declarative configuration of the NodeSelectorRequirement type for use
                                           with apply.
                                         properties:
                                           key:
@@ -77,9 +83,8 @@ spec:
                                       type: array
                                     matchFields:
                                       items:
-                                        description: NodeSelectorRequirementApplyConfiguration
-                                          represents a declarative configuration of
-                                          the NodeSelectorRequirement type for use
+                                        description: |-
+                                          NodeSelectorRequirementApplyConfiguration represents a declarative configuration of the NodeSelectorRequirement type for use
                                           with apply.
                                         properties:
                                           key:
@@ -99,21 +104,20 @@ spec:
                               type: object
                             type: array
                           requiredDuringSchedulingIgnoredDuringExecution:
-                            description: NodeSelectorApplyConfiguration represents
-                              an declarative configuration of the NodeSelector type
-                              for use with apply.
+                            description: |-
+                              NodeSelectorApplyConfiguration represents an declarative configuration of the NodeSelector type for use
+                              with apply.
                             properties:
                               nodeSelectorTerms:
                                 items:
-                                  description: NodeSelectorTermApplyConfiguration
-                                    represents a declarative configuration of the
-                                    NodeSelectorTerm type for use with apply.
+                                  description: |-
+                                    NodeSelectorTermApplyConfiguration represents a declarative configuration of the NodeSelectorTerm type for use
+                                    with apply.
                                   properties:
                                     matchExpressions:
                                       items:
-                                        description: NodeSelectorRequirementApplyConfiguration
-                                          represents a declarative configuration of
-                                          the NodeSelectorRequirement type for use
+                                        description: |-
+                                          NodeSelectorRequirementApplyConfiguration represents a declarative configuration of the NodeSelectorRequirement type for use
                                           with apply.
                                         properties:
                                           key:
@@ -128,9 +132,8 @@ spec:
                                       type: array
                                     matchFields:
                                       items:
-                                        description: NodeSelectorRequirementApplyConfiguration
-                                          represents a declarative configuration of
-                                          the NodeSelectorRequirement type for use
+                                        description: |-
+                                          NodeSelectorRequirementApplyConfiguration represents a declarative configuration of the NodeSelectorRequirement type for use
                                           with apply.
                                         properties:
                                           key:
@@ -148,31 +151,31 @@ spec:
                             type: object
                         type: object
                       podAffinity:
-                        description: PodAffinityApplyConfiguration represents a declarative
-                          configuration of the PodAffinity type for use with apply.
+                        description: |-
+                          PodAffinityApplyConfiguration represents a declarative configuration of the PodAffinity type for use
+                          with apply.
                         properties:
                           preferredDuringSchedulingIgnoredDuringExecution:
                             items:
-                              description: WeightedPodAffinityTermApplyConfiguration
-                                represents a declarative configuration of the WeightedPodAffinityTerm
-                                type for use with apply.
+                              description: |-
+                                WeightedPodAffinityTermApplyConfiguration represents a declarative configuration of the WeightedPodAffinityTerm type for use
+                                with apply.
                               properties:
                                 podAffinityTerm:
-                                  description: PodAffinityTermApplyConfiguration represents
-                                    a declarative configuration of the PodAffinityTerm
-                                    type for use with apply.
+                                  description: |-
+                                    PodAffinityTermApplyConfiguration represents a declarative configuration of the PodAffinityTerm type for use
+                                    with apply.
                                   properties:
                                     labelSelector:
-                                      description: LabelSelectorApplyConfiguration
-                                        represents an declarative configuration of
-                                        the LabelSelector type for use with apply.
+                                      description: |-
+                                        LabelSelectorApplyConfiguration represents an declarative configuration of the LabelSelector type for use
+                                        with apply.
                                       properties:
                                         matchExpressions:
                                           items:
-                                            description: LabelSelectorRequirementApplyConfiguration
-                                              represents an declarative configuration
-                                              of the LabelSelectorRequirement type
-                                              for use with apply.
+                                            description: |-
+                                              LabelSelectorRequirementApplyConfiguration represents an declarative configuration of the LabelSelectorRequirement type for use
+                                              with apply.
                                             properties:
                                               key:
                                                 type: string
@@ -190,16 +193,15 @@ spec:
                                           type: object
                                       type: object
                                     namespaceSelector:
-                                      description: LabelSelectorApplyConfiguration
-                                        represents an declarative configuration of
-                                        the LabelSelector type for use with apply.
+                                      description: |-
+                                        LabelSelectorApplyConfiguration represents an declarative configuration of the LabelSelector type for use
+                                        with apply.
                                       properties:
                                         matchExpressions:
                                           items:
-                                            description: LabelSelectorRequirementApplyConfiguration
-                                              represents an declarative configuration
-                                              of the LabelSelectorRequirement type
-                                              for use with apply.
+                                            description: |-
+                                              LabelSelectorRequirementApplyConfiguration represents an declarative configuration of the LabelSelectorRequirement type for use
+                                              with apply.
                                             properties:
                                               key:
                                                 type: string
@@ -230,21 +232,20 @@ spec:
                             type: array
                           requiredDuringSchedulingIgnoredDuringExecution:
                             items:
-                              description: PodAffinityTermApplyConfiguration represents
-                                a declarative configuration of the PodAffinityTerm
-                                type for use with apply.
+                              description: |-
+                                PodAffinityTermApplyConfiguration represents a declarative configuration of the PodAffinityTerm type for use
+                                with apply.
                               properties:
                                 labelSelector:
-                                  description: LabelSelectorApplyConfiguration represents
-                                    an declarative configuration of the LabelSelector
-                                    type for use with apply.
+                                  description: |-
+                                    LabelSelectorApplyConfiguration represents an declarative configuration of the LabelSelector type for use
+                                    with apply.
                                   properties:
                                     matchExpressions:
                                       items:
-                                        description: LabelSelectorRequirementApplyConfiguration
-                                          represents an declarative configuration
-                                          of the LabelSelectorRequirement type for
-                                          use with apply.
+                                        description: |-
+                                          LabelSelectorRequirementApplyConfiguration represents an declarative configuration of the LabelSelectorRequirement type for use
+                                          with apply.
                                         properties:
                                           key:
                                             type: string
@@ -262,16 +263,15 @@ spec:
                                       type: object
                                   type: object
                                 namespaceSelector:
-                                  description: LabelSelectorApplyConfiguration represents
-                                    an declarative configuration of the LabelSelector
-                                    type for use with apply.
+                                  description: |-
+                                    LabelSelectorApplyConfiguration represents an declarative configuration of the LabelSelector type for use
+                                    with apply.
                                   properties:
                                     matchExpressions:
                                       items:
-                                        description: LabelSelectorRequirementApplyConfiguration
-                                          represents an declarative configuration
-                                          of the LabelSelectorRequirement type for
-                                          use with apply.
+                                        description: |-
+                                          LabelSelectorRequirementApplyConfiguration represents an declarative configuration of the LabelSelectorRequirement type for use
+                                          with apply.
                                         properties:
                                           key:
                                             type: string
@@ -298,32 +298,31 @@ spec:
                             type: array
                         type: object
                       podAntiAffinity:
-                        description: PodAntiAffinityApplyConfiguration represents
-                          a declarative configuration of the PodAntiAffinity type
-                          for use with apply.
+                        description: |-
+                          PodAntiAffinityApplyConfiguration represents a declarative configuration of the PodAntiAffinity type for use
+                          with apply.
                         properties:
                           preferredDuringSchedulingIgnoredDuringExecution:
                             items:
-                              description: WeightedPodAffinityTermApplyConfiguration
-                                represents a declarative configuration of the WeightedPodAffinityTerm
-                                type for use with apply.
+                              description: |-
+                                WeightedPodAffinityTermApplyConfiguration represents a declarative configuration of the WeightedPodAffinityTerm type for use
+                                with apply.
                               properties:
                                 podAffinityTerm:
-                                  description: PodAffinityTermApplyConfiguration represents
-                                    a declarative configuration of the PodAffinityTerm
-                                    type for use with apply.
+                                  description: |-
+                                    PodAffinityTermApplyConfiguration represents a declarative configuration of the PodAffinityTerm type for use
+                                    with apply.
                                   properties:
                                     labelSelector:
-                                      description: LabelSelectorApplyConfiguration
-                                        represents an declarative configuration of
-                                        the LabelSelector type for use with apply.
+                                      description: |-
+                                        LabelSelectorApplyConfiguration represents an declarative configuration of the LabelSelector type for use
+                                        with apply.
                                       properties:
                                         matchExpressions:
                                           items:
-                                            description: LabelSelectorRequirementApplyConfiguration
-                                              represents an declarative configuration
-                                              of the LabelSelectorRequirement type
-                                              for use with apply.
+                                            description: |-
+                                              LabelSelectorRequirementApplyConfiguration represents an declarative configuration of the LabelSelectorRequirement type for use
+                                              with apply.
                                             properties:
                                               key:
                                                 type: string
@@ -341,16 +340,15 @@ spec:
                                           type: object
                                       type: object
                                     namespaceSelector:
-                                      description: LabelSelectorApplyConfiguration
-                                        represents an declarative configuration of
-                                        the LabelSelector type for use with apply.
+                                      description: |-
+                                        LabelSelectorApplyConfiguration represents an declarative configuration of the LabelSelector type for use
+                                        with apply.
                                       properties:
                                         matchExpressions:
                                           items:
-                                            description: LabelSelectorRequirementApplyConfiguration
-                                              represents an declarative configuration
-                                              of the LabelSelectorRequirement type
-                                              for use with apply.
+                                            description: |-
+                                              LabelSelectorRequirementApplyConfiguration represents an declarative configuration of the LabelSelectorRequirement type for use
+                                              with apply.
                                             properties:
                                               key:
                                                 type: string
@@ -381,21 +379,20 @@ spec:
                             type: array
                           requiredDuringSchedulingIgnoredDuringExecution:
                             items:
-                              description: PodAffinityTermApplyConfiguration represents
-                                a declarative configuration of the PodAffinityTerm
-                                type for use with apply.
+                              description: |-
+                                PodAffinityTermApplyConfiguration represents a declarative configuration of the PodAffinityTerm type for use
+                                with apply.
                               properties:
                                 labelSelector:
-                                  description: LabelSelectorApplyConfiguration represents
-                                    an declarative configuration of the LabelSelector
-                                    type for use with apply.
+                                  description: |-
+                                    LabelSelectorApplyConfiguration represents an declarative configuration of the LabelSelector type for use
+                                    with apply.
                                   properties:
                                     matchExpressions:
                                       items:
-                                        description: LabelSelectorRequirementApplyConfiguration
-                                          represents an declarative configuration
-                                          of the LabelSelectorRequirement type for
-                                          use with apply.
+                                        description: |-
+                                          LabelSelectorRequirementApplyConfiguration represents an declarative configuration of the LabelSelectorRequirement type for use
+                                          with apply.
                                         properties:
                                           key:
                                             type: string
@@ -413,16 +410,15 @@ spec:
                                       type: object
                                   type: object
                                 namespaceSelector:
-                                  description: LabelSelectorApplyConfiguration represents
-                                    an declarative configuration of the LabelSelector
-                                    type for use with apply.
+                                  description: |-
+                                    LabelSelectorApplyConfiguration represents an declarative configuration of the LabelSelector type for use
+                                    with apply.
                                   properties:
                                     matchExpressions:
                                       items:
-                                        description: LabelSelectorRequirementApplyConfiguration
-                                          represents an declarative configuration
-                                          of the LabelSelectorRequirement type for
-                                          use with apply.
+                                        description: |-
+                                          LabelSelectorRequirementApplyConfiguration represents an declarative configuration of the LabelSelectorRequirement type for use
+                                          with apply.
                                         properties:
                                           key:
                                             type: string
@@ -453,8 +449,9 @@ spec:
                     type: boolean
                   containers:
                     items:
-                      description: ContainerApplyConfiguration represents a declarative
-                        configuration of the Container type for use with apply.
+                      description: |-
+                        ContainerApplyConfiguration represents a declarative configuration of the Container type for use
+                        with apply.
                       properties:
                         args:
                           items:
@@ -466,22 +463,23 @@ spec:
                           type: array
                         env:
                           items:
-                            description: EnvVarApplyConfiguration represents a declarative
-                              configuration of the EnvVar type for use with apply.
+                            description: |-
+                              EnvVarApplyConfiguration represents a declarative configuration of the EnvVar type for use
+                              with apply.
                             properties:
                               name:
                                 type: string
                               value:
                                 type: string
                               valueFrom:
-                                description: EnvVarSourceApplyConfiguration represents
-                                  a declarative configuration of the EnvVarSource
-                                  type for use with apply.
+                                description: |-
+                                  EnvVarSourceApplyConfiguration represents a declarative configuration of the EnvVarSource type for use
+                                  with apply.
                                 properties:
                                   configMapKeyRef:
-                                    description: ConfigMapKeySelectorApplyConfiguration
-                                      represents a declarative configuration of the
-                                      ConfigMapKeySelector type for use with apply.
+                                    description: |-
+                                      ConfigMapKeySelectorApplyConfiguration represents a declarative configuration of the ConfigMapKeySelector type for use
+                                      with apply.
                                     properties:
                                       key:
                                         type: string
@@ -491,9 +489,9 @@ spec:
                                         type: boolean
                                     type: object
                                   fieldRef:
-                                    description: ObjectFieldSelectorApplyConfiguration
-                                      represents a declarative configuration of the
-                                      ObjectFieldSelector type for use with apply.
+                                    description: |-
+                                      ObjectFieldSelectorApplyConfiguration represents a declarative configuration of the ObjectFieldSelector type for use
+                                      with apply.
                                     properties:
                                       apiVersion:
                                         type: string
@@ -501,9 +499,9 @@ spec:
                                         type: string
                                     type: object
                                   resourceFieldRef:
-                                    description: ResourceFieldSelectorApplyConfiguration
-                                      represents a declarative configuration of the
-                                      ResourceFieldSelector type for use with apply.
+                                    description: |-
+                                      ResourceFieldSelectorApplyConfiguration represents a declarative configuration of the ResourceFieldSelector type for use
+                                      with apply.
                                     properties:
                                       containerName:
                                         type: string
@@ -517,9 +515,9 @@ spec:
                                         type: string
                                     type: object
                                   secretKeyRef:
-                                    description: SecretKeySelectorApplyConfiguration
-                                      represents a declarative configuration of the
-                                      SecretKeySelector type for use with apply.
+                                    description: |-
+                                      SecretKeySelectorApplyConfiguration represents a declarative configuration of the SecretKeySelector type for use
+                                      with apply.
                                     properties:
                                       key:
                                         type: string
@@ -533,14 +531,14 @@ spec:
                           type: array
                         envFrom:
                           items:
-                            description: EnvFromSourceApplyConfiguration represents
-                              a declarative configuration of the EnvFromSource type
-                              for use with apply.
+                            description: |-
+                              EnvFromSourceApplyConfiguration represents a declarative configuration of the EnvFromSource type for use
+                              with apply.
                             properties:
                               configMapRef:
-                                description: ConfigMapEnvSourceApplyConfiguration
-                                  represents a declarative configuration of the ConfigMapEnvSource
-                                  type for use with apply.
+                                description: |-
+                                  ConfigMapEnvSourceApplyConfiguration represents a declarative configuration of the ConfigMapEnvSource type for use
+                                  with apply.
                                 properties:
                                   name:
                                     type: string
@@ -550,9 +548,9 @@ spec:
                               prefix:
                                 type: string
                               secretRef:
-                                description: SecretEnvSourceApplyConfiguration represents
-                                  a declarative configuration of the SecretEnvSource
-                                  type for use with apply.
+                                description: |-
+                                  SecretEnvSourceApplyConfiguration represents a declarative configuration of the SecretEnvSource type for use
+                                  with apply.
                                 properties:
                                   name:
                                     type: string
@@ -566,18 +564,19 @@ spec:
                         imagePullPolicy:
                           type: string
                         lifecycle:
-                          description: LifecycleApplyConfiguration represents a declarative
-                            configuration of the Lifecycle type for use with apply.
+                          description: |-
+                            LifecycleApplyConfiguration represents a declarative configuration of the Lifecycle type for use
+                            with apply.
                           properties:
                             postStart:
-                              description: LifecycleHandlerApplyConfiguration represents
-                                a declarative configuration of the LifecycleHandler
-                                type for use with apply.
+                              description: |-
+                                LifecycleHandlerApplyConfiguration represents a declarative configuration of the LifecycleHandler type for use
+                                with apply.
                               properties:
                                 exec:
-                                  description: ExecActionApplyConfiguration represents
-                                    a declarative configuration of the ExecAction
-                                    type for use with apply.
+                                  description: |-
+                                    ExecActionApplyConfiguration represents a declarative configuration of the ExecAction type for use
+                                    with apply.
                                   properties:
                                     command:
                                       items:
@@ -585,17 +584,17 @@ spec:
                                       type: array
                                   type: object
                                 httpGet:
-                                  description: HTTPGetActionApplyConfiguration represents
-                                    a declarative configuration of the HTTPGetAction
-                                    type for use with apply.
+                                  description: |-
+                                    HTTPGetActionApplyConfiguration represents a declarative configuration of the HTTPGetAction type for use
+                                    with apply.
                                   properties:
                                     host:
                                       type: string
                                     httpHeaders:
                                       items:
-                                        description: HTTPHeaderApplyConfiguration
-                                          represents a declarative configuration of
-                                          the HTTPHeader type for use with apply.
+                                        description: |-
+                                          HTTPHeaderApplyConfiguration represents a declarative configuration of the HTTPHeader type for use
+                                          with apply.
                                         properties:
                                           name:
                                             type: string
@@ -614,9 +613,9 @@ spec:
                                       type: string
                                   type: object
                                 tcpSocket:
-                                  description: TCPSocketActionApplyConfiguration represents
-                                    a declarative configuration of the TCPSocketAction
-                                    type for use with apply.
+                                  description: |-
+                                    TCPSocketActionApplyConfiguration represents a declarative configuration of the TCPSocketAction type for use
+                                    with apply.
                                   properties:
                                     host:
                                       type: string
@@ -628,14 +627,14 @@ spec:
                                   type: object
                               type: object
                             preStop:
-                              description: LifecycleHandlerApplyConfiguration represents
-                                a declarative configuration of the LifecycleHandler
-                                type for use with apply.
+                              description: |-
+                                LifecycleHandlerApplyConfiguration represents a declarative configuration of the LifecycleHandler type for use
+                                with apply.
                               properties:
                                 exec:
-                                  description: ExecActionApplyConfiguration represents
-                                    a declarative configuration of the ExecAction
-                                    type for use with apply.
+                                  description: |-
+                                    ExecActionApplyConfiguration represents a declarative configuration of the ExecAction type for use
+                                    with apply.
                                   properties:
                                     command:
                                       items:
@@ -643,17 +642,17 @@ spec:
                                       type: array
                                   type: object
                                 httpGet:
-                                  description: HTTPGetActionApplyConfiguration represents
-                                    a declarative configuration of the HTTPGetAction
-                                    type for use with apply.
+                                  description: |-
+                                    HTTPGetActionApplyConfiguration represents a declarative configuration of the HTTPGetAction type for use
+                                    with apply.
                                   properties:
                                     host:
                                       type: string
                                     httpHeaders:
                                       items:
-                                        description: HTTPHeaderApplyConfiguration
-                                          represents a declarative configuration of
-                                          the HTTPHeader type for use with apply.
+                                        description: |-
+                                          HTTPHeaderApplyConfiguration represents a declarative configuration of the HTTPHeader type for use
+                                          with apply.
                                         properties:
                                           name:
                                             type: string
@@ -672,9 +671,9 @@ spec:
                                       type: string
                                   type: object
                                 tcpSocket:
-                                  description: TCPSocketActionApplyConfiguration represents
-                                    a declarative configuration of the TCPSocketAction
-                                    type for use with apply.
+                                  description: |-
+                                    TCPSocketActionApplyConfiguration represents a declarative configuration of the TCPSocketAction type for use
+                                    with apply.
                                   properties:
                                     host:
                                       type: string
@@ -687,13 +686,14 @@ spec:
                               type: object
                           type: object
                         livenessProbe:
-                          description: ProbeApplyConfiguration represents a declarative
-                            configuration of the Probe type for use with apply.
+                          description: |-
+                            ProbeApplyConfiguration represents a declarative configuration of the Probe type for use
+                            with apply.
                           properties:
                             exec:
-                              description: ExecActionApplyConfiguration represents
-                                a declarative configuration of the ExecAction type
-                                for use with apply.
+                              description: |-
+                                ExecActionApplyConfiguration represents a declarative configuration of the ExecAction type for use
+                                with apply.
                               properties:
                                 command:
                                   items:
@@ -704,9 +704,9 @@ spec:
                               format: int32
                               type: integer
                             grpc:
-                              description: GRPCActionApplyConfiguration represents
-                                a declarative configuration of the GRPCAction type
-                                for use with apply.
+                              description: |-
+                                GRPCActionApplyConfiguration represents a declarative configuration of the GRPCAction type for use
+                                with apply.
                               properties:
                                 port:
                                   format: int32
@@ -715,17 +715,17 @@ spec:
                                   type: string
                               type: object
                             httpGet:
-                              description: HTTPGetActionApplyConfiguration represents
-                                a declarative configuration of the HTTPGetAction type
-                                for use with apply.
+                              description: |-
+                                HTTPGetActionApplyConfiguration represents a declarative configuration of the HTTPGetAction type for use
+                                with apply.
                               properties:
                                 host:
                                   type: string
                                 httpHeaders:
                                   items:
-                                    description: HTTPHeaderApplyConfiguration represents
-                                      a declarative configuration of the HTTPHeader
-                                      type for use with apply.
+                                    description: |-
+                                      HTTPHeaderApplyConfiguration represents a declarative configuration of the HTTPHeader type for use
+                                      with apply.
                                     properties:
                                       name:
                                         type: string
@@ -753,9 +753,9 @@ spec:
                               format: int32
                               type: integer
                             tcpSocket:
-                              description: TCPSocketActionApplyConfiguration represents
-                                a declarative configuration of the TCPSocketAction
-                                type for use with apply.
+                              description: |-
+                                TCPSocketActionApplyConfiguration represents a declarative configuration of the TCPSocketAction type for use
+                                with apply.
                               properties:
                                 host:
                                   type: string
@@ -776,9 +776,9 @@ spec:
                           type: string
                         ports:
                           items:
-                            description: ContainerPortApplyConfiguration represents
-                              a declarative configuration of the ContainerPort type
-                              for use with apply.
+                            description: |-
+                              ContainerPortApplyConfiguration represents a declarative configuration of the ContainerPort type for use
+                              with apply.
                             properties:
                               containerPort:
                                 format: int32
@@ -795,13 +795,14 @@ spec:
                             type: object
                           type: array
                         readinessProbe:
-                          description: ProbeApplyConfiguration represents a declarative
-                            configuration of the Probe type for use with apply.
+                          description: |-
+                            ProbeApplyConfiguration represents a declarative configuration of the Probe type for use
+                            with apply.
                           properties:
                             exec:
-                              description: ExecActionApplyConfiguration represents
-                                a declarative configuration of the ExecAction type
-                                for use with apply.
+                              description: |-
+                                ExecActionApplyConfiguration represents a declarative configuration of the ExecAction type for use
+                                with apply.
                               properties:
                                 command:
                                   items:
@@ -812,9 +813,9 @@ spec:
                               format: int32
                               type: integer
                             grpc:
-                              description: GRPCActionApplyConfiguration represents
-                                a declarative configuration of the GRPCAction type
-                                for use with apply.
+                              description: |-
+                                GRPCActionApplyConfiguration represents a declarative configuration of the GRPCAction type for use
+                                with apply.
                               properties:
                                 port:
                                   format: int32
@@ -823,17 +824,17 @@ spec:
                                   type: string
                               type: object
                             httpGet:
-                              description: HTTPGetActionApplyConfiguration represents
-                                a declarative configuration of the HTTPGetAction type
-                                for use with apply.
+                              description: |-
+                                HTTPGetActionApplyConfiguration represents a declarative configuration of the HTTPGetAction type for use
+                                with apply.
                               properties:
                                 host:
                                   type: string
                                 httpHeaders:
                                   items:
-                                    description: HTTPHeaderApplyConfiguration represents
-                                      a declarative configuration of the HTTPHeader
-                                      type for use with apply.
+                                    description: |-
+                                      HTTPHeaderApplyConfiguration represents a declarative configuration of the HTTPHeader type for use
+                                      with apply.
                                     properties:
                                       name:
                                         type: string
@@ -861,9 +862,9 @@ spec:
                               format: int32
                               type: integer
                             tcpSocket:
-                              description: TCPSocketActionApplyConfiguration represents
-                                a declarative configuration of the TCPSocketAction
-                                type for use with apply.
+                              description: |-
+                                TCPSocketActionApplyConfiguration represents a declarative configuration of the TCPSocketAction type for use
+                                with apply.
                               properties:
                                 host:
                                   type: string
@@ -882,9 +883,9 @@ spec:
                           type: object
                         resizePolicy:
                           items:
-                            description: ContainerResizePolicyApplyConfiguration represents
-                              a declarative configuration of the ContainerResizePolicy
-                              type for use with apply.
+                            description: |-
+                              ContainerResizePolicyApplyConfiguration represents a declarative configuration of the ContainerResizePolicy type for use
+                              with apply.
                             properties:
                               resourceName:
                                 type: string
@@ -893,15 +894,15 @@ spec:
                             type: object
                           type: array
                         resources:
-                          description: ResourceRequirementsApplyConfiguration represents
-                            a declarative configuration of the ResourceRequirements
-                            type for use with apply.
+                          description: |-
+                            ResourceRequirementsApplyConfiguration represents a declarative configuration of the ResourceRequirements type for use
+                            with apply.
                           properties:
                             claims:
                               items:
-                                description: ResourceClaimApplyConfiguration represents
-                                  a declarative configuration of the ResourceClaim
-                                  type for use with apply.
+                                description: |-
+                                  ResourceClaimApplyConfiguration represents a declarative configuration of the ResourceClaim type for use
+                                  with apply.
                                 properties:
                                   name:
                                     type: string
@@ -925,16 +926,16 @@ spec:
                               type: object
                           type: object
                         securityContext:
-                          description: SecurityContextApplyConfiguration represents
-                            a declarative configuration of the SecurityContext type
-                            for use with apply.
+                          description: |-
+                            SecurityContextApplyConfiguration represents a declarative configuration of the SecurityContext type for use
+                            with apply.
                           properties:
                             allowPrivilegeEscalation:
                               type: boolean
                             capabilities:
-                              description: CapabilitiesApplyConfiguration represents
-                                a declarative configuration of the Capabilities type
-                                for use with apply.
+                              description: |-
+                                CapabilitiesApplyConfiguration represents a declarative configuration of the Capabilities type for use
+                                with apply.
                               properties:
                                 add:
                                   items:
@@ -960,9 +961,9 @@ spec:
                               format: int64
                               type: integer
                             seLinuxOptions:
-                              description: SELinuxOptionsApplyConfiguration represents
-                                a declarative configuration of the SELinuxOptions
-                                type for use with apply.
+                              description: |-
+                                SELinuxOptionsApplyConfiguration represents a declarative configuration of the SELinuxOptions type for use
+                                with apply.
                               properties:
                                 level:
                                   type: string
@@ -974,9 +975,9 @@ spec:
                                   type: string
                               type: object
                             seccompProfile:
-                              description: SeccompProfileApplyConfiguration represents
-                                a declarative configuration of the SeccompProfile
-                                type for use with apply.
+                              description: |-
+                                SeccompProfileApplyConfiguration represents a declarative configuration of the SeccompProfile type for use
+                                with apply.
                               properties:
                                 localhostProfile:
                                   type: string
@@ -984,9 +985,9 @@ spec:
                                   type: string
                               type: object
                             windowsOptions:
-                              description: WindowsSecurityContextOptionsApplyConfiguration
-                                represents a declarative configuration of the WindowsSecurityContextOptions
-                                type for use with apply.
+                              description: |-
+                                WindowsSecurityContextOptionsApplyConfiguration represents a declarative configuration of the WindowsSecurityContextOptions type for use
+                                with apply.
                               properties:
                                 gmsaCredentialSpec:
                                   type: string
@@ -999,13 +1000,14 @@ spec:
                               type: object
                           type: object
                         startupProbe:
-                          description: ProbeApplyConfiguration represents a declarative
-                            configuration of the Probe type for use with apply.
+                          description: |-
+                            ProbeApplyConfiguration represents a declarative configuration of the Probe type for use
+                            with apply.
                           properties:
                             exec:
-                              description: ExecActionApplyConfiguration represents
-                                a declarative configuration of the ExecAction type
-                                for use with apply.
+                              description: |-
+                                ExecActionApplyConfiguration represents a declarative configuration of the ExecAction type for use
+                                with apply.
                               properties:
                                 command:
                                   items:
@@ -1016,9 +1018,9 @@ spec:
                               format: int32
                               type: integer
                             grpc:
-                              description: GRPCActionApplyConfiguration represents
-                                a declarative configuration of the GRPCAction type
-                                for use with apply.
+                              description: |-
+                                GRPCActionApplyConfiguration represents a declarative configuration of the GRPCAction type for use
+                                with apply.
                               properties:
                                 port:
                                   format: int32
@@ -1027,17 +1029,17 @@ spec:
                                   type: string
                               type: object
                             httpGet:
-                              description: HTTPGetActionApplyConfiguration represents
-                                a declarative configuration of the HTTPGetAction type
-                                for use with apply.
+                              description: |-
+                                HTTPGetActionApplyConfiguration represents a declarative configuration of the HTTPGetAction type for use
+                                with apply.
                               properties:
                                 host:
                                   type: string
                                 httpHeaders:
                                   items:
-                                    description: HTTPHeaderApplyConfiguration represents
-                                      a declarative configuration of the HTTPHeader
-                                      type for use with apply.
+                                    description: |-
+                                      HTTPHeaderApplyConfiguration represents a declarative configuration of the HTTPHeader type for use
+                                      with apply.
                                     properties:
                                       name:
                                         type: string
@@ -1065,9 +1067,9 @@ spec:
                               format: int32
                               type: integer
                             tcpSocket:
-                              description: TCPSocketActionApplyConfiguration represents
-                                a declarative configuration of the TCPSocketAction
-                                type for use with apply.
+                              description: |-
+                                TCPSocketActionApplyConfiguration represents a declarative configuration of the TCPSocketAction type for use
+                                with apply.
                               properties:
                                 host:
                                   type: string
@@ -1096,9 +1098,9 @@ spec:
                           type: boolean
                         volumeDevices:
                           items:
-                            description: VolumeDeviceApplyConfiguration represents
-                              a declarative configuration of the VolumeDevice type
-                              for use with apply.
+                            description: |-
+                              VolumeDeviceApplyConfiguration represents a declarative configuration of the VolumeDevice type for use
+                              with apply.
                             properties:
                               devicePath:
                                 type: string
@@ -1108,9 +1110,9 @@ spec:
                           type: array
                         volumeMounts:
                           items:
-                            description: VolumeMountApplyConfiguration represents
-                              a declarative configuration of the VolumeMount type
-                              for use with apply.
+                            description: |-
+                              VolumeMountApplyConfiguration represents a declarative configuration of the VolumeMount type for use
+                              with apply.
                             properties:
                               mountPath:
                                 type: string
@@ -1131,8 +1133,9 @@ spec:
                       type: object
                     type: array
                   dnsConfig:
-                    description: PodDNSConfigApplyConfiguration represents a declarative
-                      configuration of the PodDNSConfig type for use with apply.
+                    description: |-
+                      PodDNSConfigApplyConfiguration represents a declarative configuration of the PodDNSConfig type for use
+                      with apply.
                     properties:
                       nameservers:
                         items:
@@ -1140,9 +1143,9 @@ spec:
                         type: array
                       options:
                         items:
-                          description: PodDNSConfigOptionApplyConfiguration represents
-                            a declarative configuration of the PodDNSConfigOption
-                            type for use with apply.
+                          description: |-
+                            PodDNSConfigOptionApplyConfiguration represents a declarative configuration of the PodDNSConfigOption type for use
+                            with apply.
                           properties:
                             name:
                               type: string
@@ -1161,8 +1164,9 @@ spec:
                     type: boolean
                   hostAliases:
                     items:
-                      description: HostAliasApplyConfiguration represents a declarative
-                        configuration of the HostAlias type for use with apply.
+                      description: |-
+                        HostAliasApplyConfiguration represents a declarative configuration of the HostAlias type for use
+                        with apply.
                       properties:
                         hostnames:
                           items:
@@ -1184,9 +1188,9 @@ spec:
                     type: string
                   imagePullSecrets:
                     items:
-                      description: LocalObjectReferenceApplyConfiguration represents
-                        a declarative configuration of the LocalObjectReference type
-                        for use with apply.
+                      description: |-
+                        LocalObjectReferenceApplyConfiguration represents a declarative configuration of the LocalObjectReference type for use
+                        with apply.
                       properties:
                         name:
                           type: string
@@ -1194,8 +1198,9 @@ spec:
                     type: array
                   initContainers:
                     items:
-                      description: ContainerApplyConfiguration represents a declarative
-                        configuration of the Container type for use with apply.
+                      description: |-
+                        ContainerApplyConfiguration represents a declarative configuration of the Container type for use
+                        with apply.
                       properties:
                         args:
                           items:
@@ -1207,22 +1212,23 @@ spec:
                           type: array
                         env:
                           items:
-                            description: EnvVarApplyConfiguration represents a declarative
-                              configuration of the EnvVar type for use with apply.
+                            description: |-
+                              EnvVarApplyConfiguration represents a declarative configuration of the EnvVar type for use
+                              with apply.
                             properties:
                               name:
                                 type: string
                               value:
                                 type: string
                               valueFrom:
-                                description: EnvVarSourceApplyConfiguration represents
-                                  a declarative configuration of the EnvVarSource
-                                  type for use with apply.
+                                description: |-
+                                  EnvVarSourceApplyConfiguration represents a declarative configuration of the EnvVarSource type for use
+                                  with apply.
                                 properties:
                                   configMapKeyRef:
-                                    description: ConfigMapKeySelectorApplyConfiguration
-                                      represents a declarative configuration of the
-                                      ConfigMapKeySelector type for use with apply.
+                                    description: |-
+                                      ConfigMapKeySelectorApplyConfiguration represents a declarative configuration of the ConfigMapKeySelector type for use
+                                      with apply.
                                     properties:
                                       key:
                                         type: string
@@ -1232,9 +1238,9 @@ spec:
                                         type: boolean
                                     type: object
                                   fieldRef:
-                                    description: ObjectFieldSelectorApplyConfiguration
-                                      represents a declarative configuration of the
-                                      ObjectFieldSelector type for use with apply.
+                                    description: |-
+                                      ObjectFieldSelectorApplyConfiguration represents a declarative configuration of the ObjectFieldSelector type for use
+                                      with apply.
                                     properties:
                                       apiVersion:
                                         type: string
@@ -1242,9 +1248,9 @@ spec:
                                         type: string
                                     type: object
                                   resourceFieldRef:
-                                    description: ResourceFieldSelectorApplyConfiguration
-                                      represents a declarative configuration of the
-                                      ResourceFieldSelector type for use with apply.
+                                    description: |-
+                                      ResourceFieldSelectorApplyConfiguration represents a declarative configuration of the ResourceFieldSelector type for use
+                                      with apply.
                                     properties:
                                       containerName:
                                         type: string
@@ -1258,9 +1264,9 @@ spec:
                                         type: string
                                     type: object
                                   secretKeyRef:
-                                    description: SecretKeySelectorApplyConfiguration
-                                      represents a declarative configuration of the
-                                      SecretKeySelector type for use with apply.
+                                    description: |-
+                                      SecretKeySelectorApplyConfiguration represents a declarative configuration of the SecretKeySelector type for use
+                                      with apply.
                                     properties:
                                       key:
                                         type: string
@@ -1274,14 +1280,14 @@ spec:
                           type: array
                         envFrom:
                           items:
-                            description: EnvFromSourceApplyConfiguration represents
-                              a declarative configuration of the EnvFromSource type
-                              for use with apply.
+                            description: |-
+                              EnvFromSourceApplyConfiguration represents a declarative configuration of the EnvFromSource type for use
+                              with apply.
                             properties:
                               configMapRef:
-                                description: ConfigMapEnvSourceApplyConfiguration
-                                  represents a declarative configuration of the ConfigMapEnvSource
-                                  type for use with apply.
+                                description: |-
+                                  ConfigMapEnvSourceApplyConfiguration represents a declarative configuration of the ConfigMapEnvSource type for use
+                                  with apply.
                                 properties:
                                   name:
                                     type: string
@@ -1291,9 +1297,9 @@ spec:
                               prefix:
                                 type: string
                               secretRef:
-                                description: SecretEnvSourceApplyConfiguration represents
-                                  a declarative configuration of the SecretEnvSource
-                                  type for use with apply.
+                                description: |-
+                                  SecretEnvSourceApplyConfiguration represents a declarative configuration of the SecretEnvSource type for use
+                                  with apply.
                                 properties:
                                   name:
                                     type: string
@@ -1307,18 +1313,19 @@ spec:
                         imagePullPolicy:
                           type: string
                         lifecycle:
-                          description: LifecycleApplyConfiguration represents a declarative
-                            configuration of the Lifecycle type for use with apply.
+                          description: |-
+                            LifecycleApplyConfiguration represents a declarative configuration of the Lifecycle type for use
+                            with apply.
                           properties:
                             postStart:
-                              description: LifecycleHandlerApplyConfiguration represents
-                                a declarative configuration of the LifecycleHandler
-                                type for use with apply.
+                              description: |-
+                                LifecycleHandlerApplyConfiguration represents a declarative configuration of the LifecycleHandler type for use
+                                with apply.
                               properties:
                                 exec:
-                                  description: ExecActionApplyConfiguration represents
-                                    a declarative configuration of the ExecAction
-                                    type for use with apply.
+                                  description: |-
+                                    ExecActionApplyConfiguration represents a declarative configuration of the ExecAction type for use
+                                    with apply.
                                   properties:
                                     command:
                                       items:
@@ -1326,17 +1333,17 @@ spec:
                                       type: array
                                   type: object
                                 httpGet:
-                                  description: HTTPGetActionApplyConfiguration represents
-                                    a declarative configuration of the HTTPGetAction
-                                    type for use with apply.
+                                  description: |-
+                                    HTTPGetActionApplyConfiguration represents a declarative configuration of the HTTPGetAction type for use
+                                    with apply.
                                   properties:
                                     host:
                                       type: string
                                     httpHeaders:
                                       items:
-                                        description: HTTPHeaderApplyConfiguration
-                                          represents a declarative configuration of
-                                          the HTTPHeader type for use with apply.
+                                        description: |-
+                                          HTTPHeaderApplyConfiguration represents a declarative configuration of the HTTPHeader type for use
+                                          with apply.
                                         properties:
                                           name:
                                             type: string
@@ -1355,9 +1362,9 @@ spec:
                                       type: string
                                   type: object
                                 tcpSocket:
-                                  description: TCPSocketActionApplyConfiguration represents
-                                    a declarative configuration of the TCPSocketAction
-                                    type for use with apply.
+                                  description: |-
+                                    TCPSocketActionApplyConfiguration represents a declarative configuration of the TCPSocketAction type for use
+                                    with apply.
                                   properties:
                                     host:
                                       type: string
@@ -1369,14 +1376,14 @@ spec:
                                   type: object
                               type: object
                             preStop:
-                              description: LifecycleHandlerApplyConfiguration represents
-                                a declarative configuration of the LifecycleHandler
-                                type for use with apply.
+                              description: |-
+                                LifecycleHandlerApplyConfiguration represents a declarative configuration of the LifecycleHandler type for use
+                                with apply.
                               properties:
                                 exec:
-                                  description: ExecActionApplyConfiguration represents
-                                    a declarative configuration of the ExecAction
-                                    type for use with apply.
+                                  description: |-
+                                    ExecActionApplyConfiguration represents a declarative configuration of the ExecAction type for use
+                                    with apply.
                                   properties:
                                     command:
                                       items:
@@ -1384,17 +1391,17 @@ spec:
                                       type: array
                                   type: object
                                 httpGet:
-                                  description: HTTPGetActionApplyConfiguration represents
-                                    a declarative configuration of the HTTPGetAction
-                                    type for use with apply.
+                                  description: |-
+                                    HTTPGetActionApplyConfiguration represents a declarative configuration of the HTTPGetAction type for use
+                                    with apply.
                                   properties:
                                     host:
                                       type: string
                                     httpHeaders:
                                       items:
-                                        description: HTTPHeaderApplyConfiguration
-                                          represents a declarative configuration of
-                                          the HTTPHeader type for use with apply.
+                                        description: |-
+                                          HTTPHeaderApplyConfiguration represents a declarative configuration of the HTTPHeader type for use
+                                          with apply.
                                         properties:
                                           name:
                                             type: string
@@ -1413,9 +1420,9 @@ spec:
                                       type: string
                                   type: object
                                 tcpSocket:
-                                  description: TCPSocketActionApplyConfiguration represents
-                                    a declarative configuration of the TCPSocketAction
-                                    type for use with apply.
+                                  description: |-
+                                    TCPSocketActionApplyConfiguration represents a declarative configuration of the TCPSocketAction type for use
+                                    with apply.
                                   properties:
                                     host:
                                       type: string
@@ -1428,13 +1435,14 @@ spec:
                               type: object
                           type: object
                         livenessProbe:
-                          description: ProbeApplyConfiguration represents a declarative
-                            configuration of the Probe type for use with apply.
+                          description: |-
+                            ProbeApplyConfiguration represents a declarative configuration of the Probe type for use
+                            with apply.
                           properties:
                             exec:
-                              description: ExecActionApplyConfiguration represents
-                                a declarative configuration of the ExecAction type
-                                for use with apply.
+                              description: |-
+                                ExecActionApplyConfiguration represents a declarative configuration of the ExecAction type for use
+                                with apply.
                               properties:
                                 command:
                                   items:
@@ -1445,9 +1453,9 @@ spec:
                               format: int32
                               type: integer
                             grpc:
-                              description: GRPCActionApplyConfiguration represents
-                                a declarative configuration of the GRPCAction type
-                                for use with apply.
+                              description: |-
+                                GRPCActionApplyConfiguration represents a declarative configuration of the GRPCAction type for use
+                                with apply.
                               properties:
                                 port:
                                   format: int32
@@ -1456,17 +1464,17 @@ spec:
                                   type: string
                               type: object
                             httpGet:
-                              description: HTTPGetActionApplyConfiguration represents
-                                a declarative configuration of the HTTPGetAction type
-                                for use with apply.
+                              description: |-
+                                HTTPGetActionApplyConfiguration represents a declarative configuration of the HTTPGetAction type for use
+                                with apply.
                               properties:
                                 host:
                                   type: string
                                 httpHeaders:
                                   items:
-                                    description: HTTPHeaderApplyConfiguration represents
-                                      a declarative configuration of the HTTPHeader
-                                      type for use with apply.
+                                    description: |-
+                                      HTTPHeaderApplyConfiguration represents a declarative configuration of the HTTPHeader type for use
+                                      with apply.
                                     properties:
                                       name:
                                         type: string
@@ -1494,9 +1502,9 @@ spec:
                               format: int32
                               type: integer
                             tcpSocket:
-                              description: TCPSocketActionApplyConfiguration represents
-                                a declarative configuration of the TCPSocketAction
-                                type for use with apply.
+                              description: |-
+                                TCPSocketActionApplyConfiguration represents a declarative configuration of the TCPSocketAction type for use
+                                with apply.
                               properties:
                                 host:
                                   type: string
@@ -1517,9 +1525,9 @@ spec:
                           type: string
                         ports:
                           items:
-                            description: ContainerPortApplyConfiguration represents
-                              a declarative configuration of the ContainerPort type
-                              for use with apply.
+                            description: |-
+                              ContainerPortApplyConfiguration represents a declarative configuration of the ContainerPort type for use
+                              with apply.
                             properties:
                               containerPort:
                                 format: int32
@@ -1536,13 +1544,14 @@ spec:
                             type: object
                           type: array
                         readinessProbe:
-                          description: ProbeApplyConfiguration represents a declarative
-                            configuration of the Probe type for use with apply.
+                          description: |-
+                            ProbeApplyConfiguration represents a declarative configuration of the Probe type for use
+                            with apply.
                           properties:
                             exec:
-                              description: ExecActionApplyConfiguration represents
-                                a declarative configuration of the ExecAction type
-                                for use with apply.
+                              description: |-
+                                ExecActionApplyConfiguration represents a declarative configuration of the ExecAction type for use
+                                with apply.
                               properties:
                                 command:
                                   items:
@@ -1553,9 +1562,9 @@ spec:
                               format: int32
                               type: integer
                             grpc:
-                              description: GRPCActionApplyConfiguration represents
-                                a declarative configuration of the GRPCAction type
-                                for use with apply.
+                              description: |-
+                                GRPCActionApplyConfiguration represents a declarative configuration of the GRPCAction type for use
+                                with apply.
                               properties:
                                 port:
                                   format: int32
@@ -1564,17 +1573,17 @@ spec:
                                   type: string
                               type: object
                             httpGet:
-                              description: HTTPGetActionApplyConfiguration represents
-                                a declarative configuration of the HTTPGetAction type
-                                for use with apply.
+                              description: |-
+                                HTTPGetActionApplyConfiguration represents a declarative configuration of the HTTPGetAction type for use
+                                with apply.
                               properties:
                                 host:
                                   type: string
                                 httpHeaders:
                                   items:
-                                    description: HTTPHeaderApplyConfiguration represents
-                                      a declarative configuration of the HTTPHeader
-                                      type for use with apply.
+                                    description: |-
+                                      HTTPHeaderApplyConfiguration represents a declarative configuration of the HTTPHeader type for use
+                                      with apply.
                                     properties:
                                       name:
                                         type: string
@@ -1602,9 +1611,9 @@ spec:
                               format: int32
                               type: integer
                             tcpSocket:
-                              description: TCPSocketActionApplyConfiguration represents
-                                a declarative configuration of the TCPSocketAction
-                                type for use with apply.
+                              description: |-
+                                TCPSocketActionApplyConfiguration represents a declarative configuration of the TCPSocketAction type for use
+                                with apply.
                               properties:
                                 host:
                                   type: string
@@ -1623,9 +1632,9 @@ spec:
                           type: object
                         resizePolicy:
                           items:
-                            description: ContainerResizePolicyApplyConfiguration represents
-                              a declarative configuration of the ContainerResizePolicy
-                              type for use with apply.
+                            description: |-
+                              ContainerResizePolicyApplyConfiguration represents a declarative configuration of the ContainerResizePolicy type for use
+                              with apply.
                             properties:
                               resourceName:
                                 type: string
@@ -1634,15 +1643,15 @@ spec:
                             type: object
                           type: array
                         resources:
-                          description: ResourceRequirementsApplyConfiguration represents
-                            a declarative configuration of the ResourceRequirements
-                            type for use with apply.
+                          description: |-
+                            ResourceRequirementsApplyConfiguration represents a declarative configuration of the ResourceRequirements type for use
+                            with apply.
                           properties:
                             claims:
                               items:
-                                description: ResourceClaimApplyConfiguration represents
-                                  a declarative configuration of the ResourceClaim
-                                  type for use with apply.
+                                description: |-
+                                  ResourceClaimApplyConfiguration represents a declarative configuration of the ResourceClaim type for use
+                                  with apply.
                                 properties:
                                   name:
                                     type: string
@@ -1666,16 +1675,16 @@ spec:
                               type: object
                           type: object
                         securityContext:
-                          description: SecurityContextApplyConfiguration represents
-                            a declarative configuration of the SecurityContext type
-                            for use with apply.
+                          description: |-
+                            SecurityContextApplyConfiguration represents a declarative configuration of the SecurityContext type for use
+                            with apply.
                           properties:
                             allowPrivilegeEscalation:
                               type: boolean
                             capabilities:
-                              description: CapabilitiesApplyConfiguration represents
-                                a declarative configuration of the Capabilities type
-                                for use with apply.
+                              description: |-
+                                CapabilitiesApplyConfiguration represents a declarative configuration of the Capabilities type for use
+                                with apply.
                               properties:
                                 add:
                                   items:
@@ -1701,9 +1710,9 @@ spec:
                               format: int64
                               type: integer
                             seLinuxOptions:
-                              description: SELinuxOptionsApplyConfiguration represents
-                                a declarative configuration of the SELinuxOptions
-                                type for use with apply.
+                              description: |-
+                                SELinuxOptionsApplyConfiguration represents a declarative configuration of the SELinuxOptions type for use
+                                with apply.
                               properties:
                                 level:
                                   type: string
@@ -1715,9 +1724,9 @@ spec:
                                   type: string
                               type: object
                             seccompProfile:
-                              description: SeccompProfileApplyConfiguration represents
-                                a declarative configuration of the SeccompProfile
-                                type for use with apply.
+                              description: |-
+                                SeccompProfileApplyConfiguration represents a declarative configuration of the SeccompProfile type for use
+                                with apply.
                               properties:
                                 localhostProfile:
                                   type: string
@@ -1725,9 +1734,9 @@ spec:
                                   type: string
                               type: object
                             windowsOptions:
-                              description: WindowsSecurityContextOptionsApplyConfiguration
-                                represents a declarative configuration of the WindowsSecurityContextOptions
-                                type for use with apply.
+                              description: |-
+                                WindowsSecurityContextOptionsApplyConfiguration represents a declarative configuration of the WindowsSecurityContextOptions type for use
+                                with apply.
                               properties:
                                 gmsaCredentialSpec:
                                   type: string
@@ -1740,13 +1749,14 @@ spec:
                               type: object
                           type: object
                         startupProbe:
-                          description: ProbeApplyConfiguration represents a declarative
-                            configuration of the Probe type for use with apply.
+                          description: |-
+                            ProbeApplyConfiguration represents a declarative configuration of the Probe type for use
+                            with apply.
                           properties:
                             exec:
-                              description: ExecActionApplyConfiguration represents
-                                a declarative configuration of the ExecAction type
-                                for use with apply.
+                              description: |-
+                                ExecActionApplyConfiguration represents a declarative configuration of the ExecAction type for use
+                                with apply.
                               properties:
                                 command:
                                   items:
@@ -1757,9 +1767,9 @@ spec:
                               format: int32
                               type: integer
                             grpc:
-                              description: GRPCActionApplyConfiguration represents
-                                a declarative configuration of the GRPCAction type
-                                for use with apply.
+                              description: |-
+                                GRPCActionApplyConfiguration represents a declarative configuration of the GRPCAction type for use
+                                with apply.
                               properties:
                                 port:
                                   format: int32
@@ -1768,17 +1778,17 @@ spec:
                                   type: string
                               type: object
                             httpGet:
-                              description: HTTPGetActionApplyConfiguration represents
-                                a declarative configuration of the HTTPGetAction type
-                                for use with apply.
+                              description: |-
+                                HTTPGetActionApplyConfiguration represents a declarative configuration of the HTTPGetAction type for use
+                                with apply.
                               properties:
                                 host:
                                   type: string
                                 httpHeaders:
                                   items:
-                                    description: HTTPHeaderApplyConfiguration represents
-                                      a declarative configuration of the HTTPHeader
-                                      type for use with apply.
+                                    description: |-
+                                      HTTPHeaderApplyConfiguration represents a declarative configuration of the HTTPHeader type for use
+                                      with apply.
                                     properties:
                                       name:
                                         type: string
@@ -1806,9 +1816,9 @@ spec:
                               format: int32
                               type: integer
                             tcpSocket:
-                              description: TCPSocketActionApplyConfiguration represents
-                                a declarative configuration of the TCPSocketAction
-                                type for use with apply.
+                              description: |-
+                                TCPSocketActionApplyConfiguration represents a declarative configuration of the TCPSocketAction type for use
+                                with apply.
                               properties:
                                 host:
                                   type: string
@@ -1837,9 +1847,9 @@ spec:
                           type: boolean
                         volumeDevices:
                           items:
-                            description: VolumeDeviceApplyConfiguration represents
-                              a declarative configuration of the VolumeDevice type
-                              for use with apply.
+                            description: |-
+                              VolumeDeviceApplyConfiguration represents a declarative configuration of the VolumeDevice type for use
+                              with apply.
                             properties:
                               devicePath:
                                 type: string
@@ -1849,9 +1859,9 @@ spec:
                           type: array
                         volumeMounts:
                           items:
-                            description: VolumeMountApplyConfiguration represents
-                              a declarative configuration of the VolumeMount type
-                              for use with apply.
+                            description: |-
+                              VolumeMountApplyConfiguration represents a declarative configuration of the VolumeMount type for use
+                              with apply.
                             properties:
                               mountPath:
                                 type: string
@@ -1878,8 +1888,9 @@ spec:
                       type: string
                     type: object
                   os:
-                    description: PodOSApplyConfiguration represents a declarative
-                      configuration of the PodOS type for use with apply.
+                    description: |-
+                      PodOSApplyConfiguration represents a declarative configuration of the PodOS type for use
+                      with apply.
                     properties:
                       name:
                         type: string
@@ -1901,9 +1912,9 @@ spec:
                     type: string
                   readinessGates:
                     items:
-                      description: PodReadinessGateApplyConfiguration represents a
-                        declarative configuration of the PodReadinessGate type for
-                        use with apply.
+                      description: |-
+                        PodReadinessGateApplyConfiguration represents a declarative configuration of the PodReadinessGate type for use
+                        with apply.
                       properties:
                         conditionType:
                           type: string
@@ -1911,16 +1922,16 @@ spec:
                     type: array
                   resourceClaims:
                     items:
-                      description: PodResourceClaimApplyConfiguration represents a
-                        declarative configuration of the PodResourceClaim type for
-                        use with apply.
+                      description: |-
+                        PodResourceClaimApplyConfiguration represents a declarative configuration of the PodResourceClaim type for use
+                        with apply.
                       properties:
                         name:
                           type: string
                         source:
-                          description: ClaimSourceApplyConfiguration represents a
-                            declarative configuration of the ClaimSource type for
-                            use with apply.
+                          description: |-
+                            ClaimSourceApplyConfiguration represents a declarative configuration of the ClaimSource type for use
+                            with apply.
                           properties:
                             resourceClaimName:
                               type: string
@@ -1937,18 +1948,18 @@ spec:
                     type: string
                   schedulingGates:
                     items:
-                      description: PodSchedulingGateApplyConfiguration represents
-                        a declarative configuration of the PodSchedulingGate type
-                        for use with apply.
+                      description: |-
+                        PodSchedulingGateApplyConfiguration represents a declarative configuration of the PodSchedulingGate type for use
+                        with apply.
                       properties:
                         name:
                           type: string
                       type: object
                     type: array
                   securityContext:
-                    description: PodSecurityContextApplyConfiguration represents a
-                      declarative configuration of the PodSecurityContext type for
-                      use with apply.
+                    description: |-
+                      PodSecurityContextApplyConfiguration represents a declarative configuration of the PodSecurityContext type for use
+                      with apply.
                     properties:
                       fsGroup:
                         format: int64
@@ -1964,9 +1975,9 @@ spec:
                         format: int64
                         type: integer
                       seLinuxOptions:
-                        description: SELinuxOptionsApplyConfiguration represents a
-                          declarative configuration of the SELinuxOptions type for
-                          use with apply.
+                        description: |-
+                          SELinuxOptionsApplyConfiguration represents a declarative configuration of the SELinuxOptions type for use
+                          with apply.
                         properties:
                           level:
                             type: string
@@ -1978,9 +1989,9 @@ spec:
                             type: string
                         type: object
                       seccompProfile:
-                        description: SeccompProfileApplyConfiguration represents a
-                          declarative configuration of the SeccompProfile type for
-                          use with apply.
+                        description: |-
+                          SeccompProfileApplyConfiguration represents a declarative configuration of the SeccompProfile type for use
+                          with apply.
                         properties:
                           localhostProfile:
                             type: string
@@ -1994,8 +2005,9 @@ spec:
                         type: array
                       sysctls:
                         items:
-                          description: SysctlApplyConfiguration represents a declarative
-                            configuration of the Sysctl type for use with apply.
+                          description: |-
+                            SysctlApplyConfiguration represents a declarative configuration of the Sysctl type for use
+                            with apply.
                           properties:
                             name:
                               type: string
@@ -2004,9 +2016,9 @@ spec:
                           type: object
                         type: array
                       windowsOptions:
-                        description: WindowsSecurityContextOptionsApplyConfiguration
-                          represents a declarative configuration of the WindowsSecurityContextOptions
-                          type for use with apply.
+                        description: |-
+                          WindowsSecurityContextOptionsApplyConfiguration represents a declarative configuration of the WindowsSecurityContextOptions type for use
+                          with apply.
                         properties:
                           gmsaCredentialSpec:
                             type: string
@@ -2033,8 +2045,9 @@ spec:
                     type: integer
                   tolerations:
                     items:
-                      description: TolerationApplyConfiguration represents a declarative
-                        configuration of the Toleration type for use with apply.
+                      description: |-
+                        TolerationApplyConfiguration represents a declarative configuration of the Toleration type for use
+                        with apply.
                       properties:
                         effect:
                           type: string
@@ -2051,20 +2064,20 @@ spec:
                     type: array
                   topologySpreadConstraints:
                     items:
-                      description: TopologySpreadConstraintApplyConfiguration represents
-                        a declarative configuration of the TopologySpreadConstraint
-                        type for use with apply.
+                      description: |-
+                        TopologySpreadConstraintApplyConfiguration represents a declarative configuration of the TopologySpreadConstraint type for use
+                        with apply.
                       properties:
                         labelSelector:
-                          description: LabelSelectorApplyConfiguration represents
-                            an declarative configuration of the LabelSelector type
-                            for use with apply.
+                          description: |-
+                            LabelSelectorApplyConfiguration represents an declarative configuration of the LabelSelector type for use
+                            with apply.
                           properties:
                             matchExpressions:
                               items:
-                                description: LabelSelectorRequirementApplyConfiguration
-                                  represents an declarative configuration of the LabelSelectorRequirement
-                                  type for use with apply.
+                                description: |-
+                                  LabelSelectorRequirementApplyConfiguration represents an declarative configuration of the LabelSelectorRequirement type for use
+                                  with apply.
                                 properties:
                                   key:
                                     type: string
@@ -2103,22 +2116,23 @@ spec:
                     type: array
                   volumes:
                     items:
-                      description: VolumeApplyConfiguration represents a declarative
-                        configuration of the Volume type for use with apply.
+                      description: |-
+                        VolumeApplyConfiguration represents a declarative configuration of the Volume type for use
+                        with apply.
                       properties:
                         configMap:
-                          description: ConfigMapVolumeSourceApplyConfiguration represents
-                            a declarative configuration of the ConfigMapVolumeSource
-                            type for use with apply.
+                          description: |-
+                            ConfigMapVolumeSourceApplyConfiguration represents a declarative configuration of the ConfigMapVolumeSource type for use
+                            with apply.
                           properties:
                             defaultMode:
                               format: int32
                               type: integer
                             items:
                               items:
-                                description: KeyToPathApplyConfiguration represents
-                                  a declarative configuration of the KeyToPath type
-                                  for use with apply.
+                                description: |-
+                                  KeyToPathApplyConfiguration represents a declarative configuration of the KeyToPath type for use
+                                  with apply.
                                 properties:
                                   key:
                                     type: string
@@ -2135,18 +2149,18 @@ spec:
                               type: boolean
                           type: object
                         csi:
-                          description: CSIVolumeSourceApplyConfiguration represents
-                            a declarative configuration of the CSIVolumeSource type
-                            for use with apply.
+                          description: |-
+                            CSIVolumeSourceApplyConfiguration represents a declarative configuration of the CSIVolumeSource type for use
+                            with apply.
                           properties:
                             driver:
                               type: string
                             fsType:
                               type: string
                             nodePublishSecretRef:
-                              description: LocalObjectReferenceApplyConfiguration
-                                represents a declarative configuration of the LocalObjectReference
-                                type for use with apply.
+                              description: |-
+                                LocalObjectReferenceApplyConfiguration represents a declarative configuration of the LocalObjectReference type for use
+                                with apply.
                               properties:
                                 name:
                                   type: string
@@ -2159,23 +2173,23 @@ spec:
                               type: object
                           type: object
                         downwardAPI:
-                          description: DownwardAPIVolumeSourceApplyConfiguration represents
-                            a declarative configuration of the DownwardAPIVolumeSource
-                            type for use with apply.
+                          description: |-
+                            DownwardAPIVolumeSourceApplyConfiguration represents a declarative configuration of the DownwardAPIVolumeSource type for use
+                            with apply.
                           properties:
                             defaultMode:
                               format: int32
                               type: integer
                             items:
                               items:
-                                description: DownwardAPIVolumeFileApplyConfiguration
-                                  represents a declarative configuration of the DownwardAPIVolumeFile
-                                  type for use with apply.
+                                description: |-
+                                  DownwardAPIVolumeFileApplyConfiguration represents a declarative configuration of the DownwardAPIVolumeFile type for use
+                                  with apply.
                                 properties:
                                   fieldRef:
-                                    description: ObjectFieldSelectorApplyConfiguration
-                                      represents a declarative configuration of the
-                                      ObjectFieldSelector type for use with apply.
+                                    description: |-
+                                      ObjectFieldSelectorApplyConfiguration represents a declarative configuration of the ObjectFieldSelector type for use
+                                      with apply.
                                     properties:
                                       apiVersion:
                                         type: string
@@ -2188,9 +2202,9 @@ spec:
                                   path:
                                     type: string
                                   resourceFieldRef:
-                                    description: ResourceFieldSelectorApplyConfiguration
-                                      represents a declarative configuration of the
-                                      ResourceFieldSelector type for use with apply.
+                                    description: |-
+                                      ResourceFieldSelectorApplyConfiguration represents a declarative configuration of the ResourceFieldSelector type for use
+                                      with apply.
                                     properties:
                                       containerName:
                                         type: string
@@ -2207,9 +2221,9 @@ spec:
                               type: array
                           type: object
                         emptyDir:
-                          description: EmptyDirVolumeSourceApplyConfiguration represents
-                            a declarative configuration of the EmptyDirVolumeSource
-                            type for use with apply.
+                          description: |-
+                            EmptyDirVolumeSourceApplyConfiguration represents a declarative configuration of the EmptyDirVolumeSource type for use
+                            with apply.
                           properties:
                             medium:
                               type: string
@@ -2221,30 +2235,29 @@ spec:
                               x-kubernetes-int-or-string: true
                           type: object
                         ephemeral:
-                          description: EphemeralVolumeSourceApplyConfiguration represents
-                            a declarative configuration of the EphemeralVolumeSource
-                            type for use with apply.
+                          description: |-
+                            EphemeralVolumeSourceApplyConfiguration represents a declarative configuration of the EphemeralVolumeSource type for use
+                            with apply.
                           properties:
                             volumeClaimTemplate:
-                              description: PersistentVolumeClaimTemplateApplyConfiguration
-                                represents a declarative configuration of the PersistentVolumeClaimTemplate
-                                type for use with apply.
+                              description: |-
+                                PersistentVolumeClaimTemplateApplyConfiguration represents a declarative configuration of the PersistentVolumeClaimTemplate type for use
+                                with apply.
                               properties:
                                 metadata:
                                   type: object
                                 spec:
-                                  description: PersistentVolumeClaimSpecApplyConfiguration
-                                    represents a declarative configuration of the
-                                    PersistentVolumeClaimSpec type for use with apply.
+                                  description: |-
+                                    PersistentVolumeClaimSpecApplyConfiguration represents a declarative configuration of the PersistentVolumeClaimSpec type for use
+                                    with apply.
                                   properties:
                                     accessModes:
                                       items:
                                         type: string
                                       type: array
                                     dataSource:
-                                      description: TypedLocalObjectReferenceApplyConfiguration
-                                        represents a declarative configuration of
-                                        the TypedLocalObjectReference type for use
+                                      description: |-
+                                        TypedLocalObjectReferenceApplyConfiguration represents a declarative configuration of the TypedLocalObjectReference type for use
                                         with apply.
                                       properties:
                                         apiGroup:
@@ -2255,10 +2268,9 @@ spec:
                                           type: string
                                       type: object
                                     dataSourceRef:
-                                      description: TypedObjectReferenceApplyConfiguration
-                                        represents a declarative configuration of
-                                        the TypedObjectReference type for use with
-                                        apply.
+                                      description: |-
+                                        TypedObjectReferenceApplyConfiguration represents a declarative configuration of the TypedObjectReference type for use
+                                        with apply.
                                       properties:
                                         apiGroup:
                                           type: string
@@ -2270,17 +2282,15 @@ spec:
                                           type: string
                                       type: object
                                     resources:
-                                      description: ResourceRequirementsApplyConfiguration
-                                        represents a declarative configuration of
-                                        the ResourceRequirements type for use with
-                                        apply.
+                                      description: |-
+                                        ResourceRequirementsApplyConfiguration represents a declarative configuration of the ResourceRequirements type for use
+                                        with apply.
                                       properties:
                                         claims:
                                           items:
-                                            description: ResourceClaimApplyConfiguration
-                                              represents a declarative configuration
-                                              of the ResourceClaim type for use with
-                                              apply.
+                                            description: |-
+                                              ResourceClaimApplyConfiguration represents a declarative configuration of the ResourceClaim type for use
+                                              with apply.
                                             properties:
                                               name:
                                                 type: string
@@ -2304,16 +2314,15 @@ spec:
                                           type: object
                                       type: object
                                     selector:
-                                      description: LabelSelectorApplyConfiguration
-                                        represents an declarative configuration of
-                                        the LabelSelector type for use with apply.
+                                      description: |-
+                                        LabelSelectorApplyConfiguration represents an declarative configuration of the LabelSelector type for use
+                                        with apply.
                                       properties:
                                         matchExpressions:
                                           items:
-                                            description: LabelSelectorRequirementApplyConfiguration
-                                              represents an declarative configuration
-                                              of the LabelSelectorRequirement type
-                                              for use with apply.
+                                            description: |-
+                                              LabelSelectorRequirementApplyConfiguration represents an declarative configuration of the LabelSelectorRequirement type for use
+                                              with apply.
                                             properties:
                                               key:
                                                 type: string
@@ -2340,9 +2349,9 @@ spec:
                               type: object
                           type: object
                         iscsi:
-                          description: ISCSIVolumeSourceApplyConfiguration represents
-                            a declarative configuration of the ISCSIVolumeSource type
-                            for use with apply.
+                          description: |-
+                            ISCSIVolumeSourceApplyConfiguration represents a declarative configuration of the ISCSIVolumeSource type for use
+                            with apply.
                           properties:
                             chapAuthDiscovery:
                               type: boolean
@@ -2366,9 +2375,9 @@ spec:
                             readOnly:
                               type: boolean
                             secretRef:
-                              description: LocalObjectReferenceApplyConfiguration
-                                represents a declarative configuration of the LocalObjectReference
-                                type for use with apply.
+                              description: |-
+                                LocalObjectReferenceApplyConfiguration represents a declarative configuration of the LocalObjectReference type for use
+                                with apply.
                               properties:
                                 name:
                                   type: string
@@ -2379,9 +2388,9 @@ spec:
                         name:
                           type: string
                         nfs:
-                          description: NFSVolumeSourceApplyConfiguration represents
-                            a declarative configuration of the NFSVolumeSource type
-                            for use with apply.
+                          description: |-
+                            NFSVolumeSourceApplyConfiguration represents a declarative configuration of the NFSVolumeSource type for use
+                            with apply.
                           properties:
                             path:
                               type: string
@@ -2391,9 +2400,9 @@ spec:
                               type: string
                           type: object
                         persistentVolumeClaim:
-                          description: PersistentVolumeClaimVolumeSourceApplyConfiguration
-                            represents a declarative configuration of the PersistentVolumeClaimVolumeSource
-                            type for use with apply.
+                          description: |-
+                            PersistentVolumeClaimVolumeSourceApplyConfiguration represents a declarative configuration of the PersistentVolumeClaimVolumeSource type for use
+                            with apply.
                           properties:
                             claimName:
                               type: string
@@ -2401,29 +2410,29 @@ spec:
                               type: boolean
                           type: object
                         projected:
-                          description: ProjectedVolumeSourceApplyConfiguration represents
-                            a declarative configuration of the ProjectedVolumeSource
-                            type for use with apply.
+                          description: |-
+                            ProjectedVolumeSourceApplyConfiguration represents a declarative configuration of the ProjectedVolumeSource type for use
+                            with apply.
                           properties:
                             defaultMode:
                               format: int32
                               type: integer
                             sources:
                               items:
-                                description: VolumeProjectionApplyConfiguration represents
-                                  a declarative configuration of the VolumeProjection
-                                  type for use with apply.
+                                description: |-
+                                  VolumeProjectionApplyConfiguration represents a declarative configuration of the VolumeProjection type for use
+                                  with apply.
                                 properties:
                                   configMap:
-                                    description: ConfigMapProjectionApplyConfiguration
-                                      represents a declarative configuration of the
-                                      ConfigMapProjection type for use with apply.
+                                    description: |-
+                                      ConfigMapProjectionApplyConfiguration represents a declarative configuration of the ConfigMapProjection type for use
+                                      with apply.
                                     properties:
                                       items:
                                         items:
-                                          description: KeyToPathApplyConfiguration
-                                            represents a declarative configuration
-                                            of the KeyToPath type for use with apply.
+                                          description: |-
+                                            KeyToPathApplyConfiguration represents a declarative configuration of the KeyToPath type for use
+                                            with apply.
                                           properties:
                                             key:
                                               type: string
@@ -2440,22 +2449,20 @@ spec:
                                         type: boolean
                                     type: object
                                   downwardAPI:
-                                    description: DownwardAPIProjectionApplyConfiguration
-                                      represents a declarative configuration of the
-                                      DownwardAPIProjection type for use with apply.
+                                    description: |-
+                                      DownwardAPIProjectionApplyConfiguration represents a declarative configuration of the DownwardAPIProjection type for use
+                                      with apply.
                                     properties:
                                       items:
                                         items:
-                                          description: DownwardAPIVolumeFileApplyConfiguration
-                                            represents a declarative configuration
-                                            of the DownwardAPIVolumeFile type for
-                                            use with apply.
+                                          description: |-
+                                            DownwardAPIVolumeFileApplyConfiguration represents a declarative configuration of the DownwardAPIVolumeFile type for use
+                                            with apply.
                                           properties:
                                             fieldRef:
-                                              description: ObjectFieldSelectorApplyConfiguration
-                                                represents a declarative configuration
-                                                of the ObjectFieldSelector type for
-                                                use with apply.
+                                              description: |-
+                                                ObjectFieldSelectorApplyConfiguration represents a declarative configuration of the ObjectFieldSelector type for use
+                                                with apply.
                                               properties:
                                                 apiVersion:
                                                   type: string
@@ -2468,10 +2475,9 @@ spec:
                                             path:
                                               type: string
                                             resourceFieldRef:
-                                              description: ResourceFieldSelectorApplyConfiguration
-                                                represents a declarative configuration
-                                                of the ResourceFieldSelector type
-                                                for use with apply.
+                                              description: |-
+                                                ResourceFieldSelectorApplyConfiguration represents a declarative configuration of the ResourceFieldSelector type for use
+                                                with apply.
                                               properties:
                                                 containerName:
                                                   type: string
@@ -2488,15 +2494,15 @@ spec:
                                         type: array
                                     type: object
                                   secret:
-                                    description: SecretProjectionApplyConfiguration
-                                      represents a declarative configuration of the
-                                      SecretProjection type for use with apply.
+                                    description: |-
+                                      SecretProjectionApplyConfiguration represents a declarative configuration of the SecretProjection type for use
+                                      with apply.
                                     properties:
                                       items:
                                         items:
-                                          description: KeyToPathApplyConfiguration
-                                            represents a declarative configuration
-                                            of the KeyToPath type for use with apply.
+                                          description: |-
+                                            KeyToPathApplyConfiguration represents a declarative configuration of the KeyToPath type for use
+                                            with apply.
                                           properties:
                                             key:
                                               type: string
@@ -2513,10 +2519,9 @@ spec:
                                         type: boolean
                                     type: object
                                   serviceAccountToken:
-                                    description: ServiceAccountTokenProjectionApplyConfiguration
-                                      represents a declarative configuration of the
-                                      ServiceAccountTokenProjection type for use with
-                                      apply.
+                                    description: |-
+                                      ServiceAccountTokenProjectionApplyConfiguration represents a declarative configuration of the ServiceAccountTokenProjection type for use
+                                      with apply.
                                     properties:
                                       audience:
                                         type: string
@@ -2530,18 +2535,18 @@ spec:
                               type: array
                           type: object
                         secret:
-                          description: SecretVolumeSourceApplyConfiguration represents
-                            a declarative configuration of the SecretVolumeSource
-                            type for use with apply.
+                          description: |-
+                            SecretVolumeSourceApplyConfiguration represents a declarative configuration of the SecretVolumeSource type for use
+                            with apply.
                           properties:
                             defaultMode:
                               format: int32
                               type: integer
                             items:
                               items:
-                                description: KeyToPathApplyConfiguration represents
-                                  a declarative configuration of the KeyToPath type
-                                  for use with apply.
+                                description: |-
+                                  KeyToPathApplyConfiguration represents a declarative configuration of the KeyToPath type for use
+                                  with apply.
                                 properties:
                                   key:
                                     type: string
@@ -2558,18 +2563,18 @@ spec:
                               type: string
                           type: object
                         storageos:
-                          description: StorageOSVolumeSourceApplyConfiguration represents
-                            a declarative configuration of the StorageOSVolumeSource
-                            type for use with apply.
+                          description: |-
+                            StorageOSVolumeSourceApplyConfiguration represents a declarative configuration of the StorageOSVolumeSource type for use
+                            with apply.
                           properties:
                             fsType:
                               type: string
                             readOnly:
                               type: boolean
                             secretRef:
-                              description: LocalObjectReferenceApplyConfiguration
-                                represents a declarative configuration of the LocalObjectReference
-                                type for use with apply.
+                              description: |-
+                                LocalObjectReferenceApplyConfiguration represents a declarative configuration of the LocalObjectReference type for use
+                                with apply.
                               properties:
                                 name:
                                   type: string

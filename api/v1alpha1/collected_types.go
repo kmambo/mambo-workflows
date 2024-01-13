@@ -9,14 +9,12 @@ import (
 
 // NodeSelectorApplyConfiguration represents an declarative configuration of the NodeSelector type for use
 // with apply.
-// +kubebuilder:object:root=true
 type NodeSelectorApplyConfiguration struct {
 	NodeSelectorTerms []NodeSelectorTermApplyConfiguration `json:"nodeSelectorTerms,omitempty"`
 }
 
 // ObjectFieldSelectorApplyConfiguration represents a declarative configuration of the ObjectFieldSelector type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ObjectFieldSelectorApplyConfiguration struct {
 	APIVersion *string `json:"apiVersion,omitempty"`
 	FieldPath  *string `json:"fieldPath,omitempty"`
@@ -24,7 +22,6 @@ type ObjectFieldSelectorApplyConfiguration struct {
 
 // LocalVolumeSourceApplyConfiguration represents a declarative configuration of the LocalVolumeSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type LocalVolumeSourceApplyConfiguration struct {
 	Path   *string `json:"path,omitempty"`
 	FSType *string `json:"fsType,omitempty"`
@@ -32,7 +29,6 @@ type LocalVolumeSourceApplyConfiguration struct {
 
 // PersistentVolumeClaimTemplateApplyConfiguration represents a declarative configuration of the PersistentVolumeClaimTemplate type for use
 // with apply.
-// +kubebuilder:object:root=true
 type PersistentVolumeClaimTemplateApplyConfiguration struct {
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 	Spec              *PersistentVolumeClaimSpecApplyConfiguration `json:"spec,omitempty"`
@@ -40,14 +36,12 @@ type PersistentVolumeClaimTemplateApplyConfiguration struct {
 
 // EphemeralVolumeSourceApplyConfiguration represents a declarative configuration of the EphemeralVolumeSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type EphemeralVolumeSourceApplyConfiguration struct {
 	VolumeClaimTemplate *PersistentVolumeClaimTemplateApplyConfiguration `json:"volumeClaimTemplate,omitempty"`
 }
 
 // ResourceFieldSelectorApplyConfiguration represents a declarative configuration of the ResourceFieldSelector type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ResourceFieldSelectorApplyConfiguration struct {
 	ContainerName *string            `json:"containerName,omitempty"`
 	Resource      *string            `json:"resource,omitempty"`
@@ -56,7 +50,6 @@ type ResourceFieldSelectorApplyConfiguration struct {
 
 // ContainerResizePolicyApplyConfiguration represents a declarative configuration of the ContainerResizePolicy type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ContainerResizePolicyApplyConfiguration struct {
 	ResourceName  *string `json:"resourceName,omitempty"`
 	RestartPolicy string  `json:"restartPolicy,omitempty"`
@@ -64,7 +57,6 @@ type ContainerResizePolicyApplyConfiguration struct {
 
 // VolumeSourceApplyConfiguration represents a declarative configuration of the VolumeSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type VolumeSourceApplyConfiguration struct {
 	EmptyDir              *EmptyDirVolumeSourceApplyConfiguration              `json:"emptyDir,omitempty"`
 	Secret                *SecretVolumeSourceApplyConfiguration                `json:"secret,omitempty"`
@@ -81,7 +73,6 @@ type VolumeSourceApplyConfiguration struct {
 
 // HTTPGetActionApplyConfiguration represents a declarative configuration of the HTTPGetAction type for use
 // with apply.
-// +kubebuilder:object:root=true
 type HTTPGetActionApplyConfiguration struct {
 	Path        *string                        `json:"path,omitempty"`
 	Port        *intstr.IntOrString            `json:"port,omitempty"`
@@ -92,7 +83,6 @@ type HTTPGetActionApplyConfiguration struct {
 
 // FlockerVolumeSourceApplyConfiguration represents a declarative configuration of the FlockerVolumeSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type FlockerVolumeSourceApplyConfiguration struct {
 	DatasetName *string `json:"datasetName,omitempty"`
 	DatasetUUID *string `json:"datasetUUID,omitempty"`
@@ -100,7 +90,6 @@ type FlockerVolumeSourceApplyConfiguration struct {
 
 // NFSVolumeSourceApplyConfiguration represents a declarative configuration of the NFSVolumeSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type NFSVolumeSourceApplyConfiguration struct {
 	Server   *string `json:"server,omitempty"`
 	Path     *string `json:"path,omitempty"`
@@ -109,7 +98,6 @@ type NFSVolumeSourceApplyConfiguration struct {
 
 // EventApplyConfiguration represents a declarative configuration of the Event type for use
 // with apply.
-// +kubebuilder:object:root=true
 type EventApplyConfiguration struct {
 	metav1.TypeMeta     `json:",inline"`
 	metav1.ObjectMeta   `json:"metadata,omitempty"`
@@ -131,7 +119,6 @@ type EventApplyConfiguration struct {
 
 // LoadBalancerIngressApplyConfiguration represents a declarative configuration of the LoadBalancerIngress type for use
 // with apply.
-// +kubebuilder:object:root=true
 type LoadBalancerIngressApplyConfiguration struct {
 	IP       *string                        `json:"ip,omitempty"`
 	Hostname *string                        `json:"hostname,omitempty"`
@@ -140,7 +127,6 @@ type LoadBalancerIngressApplyConfiguration struct {
 
 // PersistentVolumeClaimSpecApplyConfiguration represents a declarative configuration of the PersistentVolumeClaimSpec type for use
 // with apply.
-// +kubebuilder:object:root=true
 type PersistentVolumeClaimSpecApplyConfiguration struct {
 	AccessModes      []string                                     `json:"accessModes,omitempty"`
 	Selector         LabelSelectorApplyConfiguration              `json:"selector,omitempty"`
@@ -154,7 +140,6 @@ type PersistentVolumeClaimSpecApplyConfiguration struct {
 
 // ProjectedVolumeSourceApplyConfiguration represents a declarative configuration of the ProjectedVolumeSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ProjectedVolumeSourceApplyConfiguration struct {
 	Sources     []VolumeProjectionApplyConfiguration `json:"sources,omitempty"`
 	DefaultMode *int32                               `json:"defaultMode,omitempty"`
@@ -162,7 +147,6 @@ type ProjectedVolumeSourceApplyConfiguration struct {
 
 // PodTemplateApplyConfiguration represents a declarative configuration of the PodTemplate type for use
 // with apply.
-// +kubebuilder:object:root=true
 type PodTemplateApplyConfiguration struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
@@ -171,7 +155,6 @@ type PodTemplateApplyConfiguration struct {
 
 // ConfigMapNodeConfigSourceApplyConfiguration represents a declarative configuration of the ConfigMapNodeConfigSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ConfigMapNodeConfigSourceApplyConfiguration struct {
 	Namespace        *string    `json:"namespace,omitempty"`
 	Name             *string    `json:"name,omitempty"`
@@ -182,7 +165,6 @@ type ConfigMapNodeConfigSourceApplyConfiguration struct {
 
 // TaintApplyConfiguration represents a declarative configuration of the Taint type for use
 // with apply.
-// +kubebuilder:object:root=true
 type TaintApplyConfiguration struct {
 	Key       *string      `json:"key,omitempty"`
 	Value     *string      `json:"value,omitempty"`
@@ -192,14 +174,12 @@ type TaintApplyConfiguration struct {
 
 // PodReadinessGateApplyConfiguration represents a declarative configuration of the PodReadinessGate type for use
 // with apply.
-// +kubebuilder:object:root=true
 type PodReadinessGateApplyConfiguration struct {
 	ConditionType *string `json:"conditionType,omitempty"`
 }
 
 // ContainerStatusApplyConfiguration represents a declarative configuration of the ContainerStatus type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ContainerStatusApplyConfiguration struct {
 	Name                 *string                                 `json:"name,omitempty"`
 	State                *ContainerStateApplyConfiguration       `json:"state,omitempty"`
@@ -216,7 +196,6 @@ type ContainerStatusApplyConfiguration struct {
 
 // VolumeMountApplyConfiguration represents a declarative configuration of the VolumeMount type for use
 // with apply.
-// +kubebuilder:object:root=true
 type VolumeMountApplyConfiguration struct {
 	Name             *string `json:"name,omitempty"`
 	ReadOnly         *bool   `json:"readOnly,omitempty"`
@@ -228,7 +207,6 @@ type VolumeMountApplyConfiguration struct {
 
 // EventSourceApplyConfiguration represents a declarative configuration of the EventSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type EventSourceApplyConfiguration struct {
 	Component *string `json:"component,omitempty"`
 	Host      *string `json:"host,omitempty"`
@@ -236,7 +214,6 @@ type EventSourceApplyConfiguration struct {
 
 // ConfigMapEnvSourceApplyConfiguration represents a declarative configuration of the ConfigMapEnvSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ConfigMapEnvSourceApplyConfiguration struct {
 	LocalObjectReferenceApplyConfiguration `json:",inline"`
 	Optional                               *bool `json:"optional,omitempty"`
@@ -244,7 +221,6 @@ type ConfigMapEnvSourceApplyConfiguration struct {
 
 // DownwardAPIVolumeSourceApplyConfiguration represents a declarative configuration of the DownwardAPIVolumeSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type DownwardAPIVolumeSourceApplyConfiguration struct {
 	Items       []DownwardAPIVolumeFileApplyConfiguration `json:"items,omitempty"`
 	DefaultMode *int32                                    `json:"defaultMode,omitempty"`
@@ -252,7 +228,6 @@ type DownwardAPIVolumeSourceApplyConfiguration struct {
 
 // QuobyteVolumeSourceApplyConfiguration represents a declarative configuration of the QuobyteVolumeSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type QuobyteVolumeSourceApplyConfiguration struct {
 	Registry *string `json:"registry,omitempty"`
 	Volume   *string `json:"volume,omitempty"`
@@ -264,7 +239,6 @@ type QuobyteVolumeSourceApplyConfiguration struct {
 
 // FCVolumeSourceApplyConfiguration represents a declarative configuration of the FCVolumeSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type FCVolumeSourceApplyConfiguration struct {
 	TargetWWNs []string `json:"targetWWNs,omitempty"`
 	Lun        *int32   `json:"lun,omitempty"`
@@ -275,7 +249,6 @@ type FCVolumeSourceApplyConfiguration struct {
 
 // TypedObjectReferenceApplyConfiguration represents a declarative configuration of the TypedObjectReference type for use
 // with apply.
-// +kubebuilder:object:root=true
 type TypedObjectReferenceApplyConfiguration struct {
 	APIGroup  *string `json:"apiGroup,omitempty"`
 	Kind      *string `json:"kind,omitempty"`
@@ -285,7 +258,6 @@ type TypedObjectReferenceApplyConfiguration struct {
 
 // PodDNSConfigOptionApplyConfiguration represents a declarative configuration of the PodDNSConfigOption type for use
 // with apply.
-// +kubebuilder:object:root=true
 type PodDNSConfigOptionApplyConfiguration struct {
 	Name  *string `json:"name,omitempty"`
 	Value *string `json:"value,omitempty"`
@@ -293,7 +265,6 @@ type PodDNSConfigOptionApplyConfiguration struct {
 
 // RBDPersistentVolumeSourceApplyConfiguration represents a declarative configuration of the RBDPersistentVolumeSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type RBDPersistentVolumeSourceApplyConfiguration struct {
 	CephMonitors []string                           `json:"monitors,omitempty"`
 	RBDImage     *string                            `json:"image,omitempty"`
@@ -307,7 +278,6 @@ type RBDPersistentVolumeSourceApplyConfiguration struct {
 
 // SecretKeySelectorApplyConfiguration represents a declarative configuration of the SecretKeySelector type for use
 // with apply.
-// +kubebuilder:object:root=true
 type SecretKeySelectorApplyConfiguration struct {
 	LocalObjectReferenceApplyConfiguration `json:",inline"`
 	Key                                    *string `json:"key,omitempty"`
@@ -316,7 +286,6 @@ type SecretKeySelectorApplyConfiguration struct {
 
 // PersistentVolumeStatusApplyConfiguration represents a declarative configuration of the PersistentVolumeStatus type for use
 // with apply.
-// +kubebuilder:object:root=true
 type PersistentVolumeStatusApplyConfiguration struct {
 	Phase   *string `json:"phase,omitempty"`
 	Message *string `json:"message,omitempty"`
@@ -325,7 +294,6 @@ type PersistentVolumeStatusApplyConfiguration struct {
 
 // KeyToPathApplyConfiguration represents a declarative configuration of the KeyToPath type for use
 // with apply.
-// +kubebuilder:object:root=true
 type KeyToPathApplyConfiguration struct {
 	Key  *string `json:"key,omitempty"`
 	Path *string `json:"path,omitempty"`
@@ -334,7 +302,6 @@ type KeyToPathApplyConfiguration struct {
 
 // VsphereVirtualDiskVolumeSourceApplyConfiguration represents a declarative configuration of the VsphereVirtualDiskVolumeSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type VsphereVirtualDiskVolumeSourceApplyConfiguration struct {
 	VolumePath        *string `json:"volumePath,omitempty"`
 	FSType            *string `json:"fsType,omitempty"`
@@ -344,7 +311,6 @@ type VsphereVirtualDiskVolumeSourceApplyConfiguration struct {
 
 // ContainerImageApplyConfiguration represents a declarative configuration of the ContainerImage type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ContainerImageApplyConfiguration struct {
 	Names     []string `json:"names,omitempty"`
 	SizeBytes *int64   `json:"sizeBytes,omitempty"`
@@ -352,7 +318,6 @@ type ContainerImageApplyConfiguration struct {
 
 // ResourceQuotaStatusApplyConfiguration represents a declarative configuration of the ResourceQuotaStatus type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ResourceQuotaStatusApplyConfiguration struct {
 	Hard *map[string]resource.Quantity `json:"hard,omitempty"`
 	Used *map[string]resource.Quantity `json:"used,omitempty"`
@@ -360,7 +325,6 @@ type ResourceQuotaStatusApplyConfiguration struct {
 
 // ISCSIVolumeSourceApplyConfiguration represents a declarative configuration of the ISCSIVolumeSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ISCSIVolumeSourceApplyConfiguration struct {
 	TargetPortal      *string                                 `json:"targetPortal,omitempty"`
 	IQN               *string                                 `json:"iqn,omitempty"`
@@ -377,7 +341,6 @@ type ISCSIVolumeSourceApplyConfiguration struct {
 
 // PersistentVolumeClaimVolumeSourceApplyConfiguration represents a declarative configuration of the PersistentVolumeClaimVolumeSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type PersistentVolumeClaimVolumeSourceApplyConfiguration struct {
 	ClaimName *string `json:"claimName,omitempty"`
 	ReadOnly  *bool   `json:"readOnly,omitempty"`
@@ -385,7 +348,6 @@ type PersistentVolumeClaimVolumeSourceApplyConfiguration struct {
 
 // GRPCActionApplyConfiguration represents a declarative configuration of the GRPCAction type for use
 // with apply.
-// +kubebuilder:object:root=true
 type GRPCActionApplyConfiguration struct {
 	Port    *int32  `json:"port,omitempty"`
 	Service *string `json:"service,omitempty"`
@@ -393,7 +355,6 @@ type GRPCActionApplyConfiguration struct {
 
 // CSIPersistentVolumeSourceApplyConfiguration represents a declarative configuration of the CSIPersistentVolumeSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type CSIPersistentVolumeSourceApplyConfiguration struct {
 	Driver                     *string                            `json:"driver,omitempty"`
 	VolumeHandle               *string                            `json:"volumeHandle,omitempty"`
@@ -409,7 +370,6 @@ type CSIPersistentVolumeSourceApplyConfiguration struct {
 
 // ContainerStateApplyConfiguration represents a declarative configuration of the ContainerState type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ContainerStateApplyConfiguration struct {
 	Waiting    *ContainerStateWaitingApplyConfiguration    `json:"waiting,omitempty"`
 	Running    *ContainerStateRunningApplyConfiguration    `json:"running,omitempty"`
@@ -418,14 +378,12 @@ type ContainerStateApplyConfiguration struct {
 
 // PodSchedulingGateApplyConfiguration represents a declarative configuration of the PodSchedulingGate type for use
 // with apply.
-// +kubebuilder:object:root=true
 type PodSchedulingGateApplyConfiguration struct {
 	Name *string `json:"name,omitempty"`
 }
 
 // PodApplyConfiguration represents a declarative configuration of the Pod type for use
 // with apply.
-// +kubebuilder:object:root=true
 type PodApplyConfiguration struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
@@ -435,7 +393,6 @@ type PodApplyConfiguration struct {
 
 // PersistentVolumeSourceApplyConfiguration represents a declarative configuration of the PersistentVolumeSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type PersistentVolumeSourceApplyConfiguration struct {
 	HostPath  *HostPathVolumeSourceApplyConfiguration            `json:"hostPath,omitempty"`
 	NFS       *NFSVolumeSourceApplyConfiguration                 `json:"nfs,omitempty"`
@@ -448,7 +405,6 @@ type PersistentVolumeSourceApplyConfiguration struct {
 
 // ScopedResourceSelectorRequirementApplyConfiguration represents a declarative configuration of the ScopedResourceSelectorRequirement type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ScopedResourceSelectorRequirementApplyConfiguration struct {
 	ScopeName *string  `json:"scopeName,omitempty"`
 	Operator  *string  `json:"operator,omitempty"`
@@ -457,12 +413,10 @@ type ScopedResourceSelectorRequirementApplyConfiguration struct {
 
 // LocalObjectReferenceApplyConfiguration represents a declarative configuration of the LocalObjectReference type for use
 // with apply.
-// +kubebuilder:object:root=true
 type LocalObjectReferenceApplyConfiguration struct {
 	Name *string `json:"name,omitempty"`
 }
 
-// +kubebuilder:object:root=true
 type AffinityApplyConfiguration struct {
 	NodeAffinity    *NodeAffinityApplyConfiguration    `json:"nodeAffinity,omitempty"`
 	PodAffinity     *PodAffinityApplyConfiguration     `json:"podAffinity,omitempty"`
@@ -471,7 +425,6 @@ type AffinityApplyConfiguration struct {
 
 // StorageOSPersistentVolumeSourceApplyConfiguration represents a declarative configuration of the StorageOSPersistentVolumeSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type StorageOSPersistentVolumeSourceApplyConfiguration struct {
 	VolumeName      *string                            `json:"volumeName,omitempty"`
 	VolumeNamespace *string                            `json:"volumeNamespace,omitempty"`
@@ -482,7 +435,6 @@ type StorageOSPersistentVolumeSourceApplyConfiguration struct {
 
 // NodeAffinityApplyConfiguration represents a declarative configuration of the NodeAffinity type for use
 // with apply.
-// +kubebuilder:object:root=true
 type NodeAffinityApplyConfiguration struct {
 	RequiredDuringSchedulingIgnoredDuringExecution  NodeSelectorApplyConfiguration              `json:"requiredDuringSchedulingIgnoredDuringExecution,omitempty"`
 	PreferredDuringSchedulingIgnoredDuringExecution []PreferredSchedulingTermApplyConfiguration `json:"preferredDuringSchedulingIgnoredDuringExecution,omitempty"`
@@ -490,7 +442,6 @@ type NodeAffinityApplyConfiguration struct {
 
 // ResourceRequirementsApplyConfiguration represents a declarative configuration of the ResourceRequirements type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ResourceRequirementsApplyConfiguration struct {
 	Limits   *map[string]resource.Quantity     `json:"limits,omitempty"`
 	Requests *map[string]resource.Quantity     `json:"requests,omitempty"`
@@ -499,7 +450,6 @@ type ResourceRequirementsApplyConfiguration struct {
 
 // SecretEnvSourceApplyConfiguration represents a declarative configuration of the SecretEnvSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type SecretEnvSourceApplyConfiguration struct {
 	LocalObjectReferenceApplyConfiguration `json:",inline"`
 	Optional                               *bool `json:"optional,omitempty"`
@@ -507,21 +457,18 @@ type SecretEnvSourceApplyConfiguration struct {
 
 // PodOSApplyConfiguration represents a declarative configuration of the PodOS type for use
 // with apply.
-// +kubebuilder:object:root=true
 type PodOSApplyConfiguration struct {
 	Name *string `json:"name,omitempty"`
 }
 
 // SessionAffinityConfigApplyConfiguration represents a declarative configuration of the SessionAffinityConfig type for use
 // with apply.
-// +kubebuilder:object:root=true
 type SessionAffinityConfigApplyConfiguration struct {
 	ClientIP *ClientIPConfigApplyConfiguration `json:"clientIP,omitempty"`
 }
 
 // CSIVolumeSourceApplyConfiguration represents a declarative configuration of the CSIVolumeSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type CSIVolumeSourceApplyConfiguration struct {
 	Driver               *string                                 `json:"driver,omitempty"`
 	ReadOnly             *bool                                   `json:"readOnly,omitempty"`
@@ -532,7 +479,6 @@ type CSIVolumeSourceApplyConfiguration struct {
 
 // EnvFromSourceApplyConfiguration represents a declarative configuration of the EnvFromSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type EnvFromSourceApplyConfiguration struct {
 	Prefix       *string                               `json:"prefix,omitempty"`
 	ConfigMapRef *ConfigMapEnvSourceApplyConfiguration `json:"configMapRef,omitempty"`
@@ -541,7 +487,6 @@ type EnvFromSourceApplyConfiguration struct {
 
 // PodSpecApplyConfiguration represents a declarative configuration of the PodSpec type for use
 // with apply.
-// +kubebuilder:object:root=true
 type PodSpecApplyConfiguration struct {
 	Volumes                       []VolumeApplyConfiguration                   `json:"volumes,omitempty"`
 	InitContainers                []ContainerApplyConfiguration                `json:"initContainers,omitempty"`
@@ -585,7 +530,6 @@ type PodSpecApplyConfiguration struct {
 
 // EndpointPortApplyConfiguration represents a declarative configuration of the EndpointPort type for use
 // with apply.
-// +kubebuilder:object:root=true
 type EndpointPortApplyConfiguration struct {
 	Name        *string `json:"name,omitempty"`
 	Port        *int32  `json:"port,omitempty"`
@@ -595,7 +539,6 @@ type EndpointPortApplyConfiguration struct {
 
 // HTTPHeaderApplyConfiguration represents a declarative configuration of the HTTPHeader type for use
 // with apply.
-// +kubebuilder:object:root=true
 type HTTPHeaderApplyConfiguration struct {
 	Name  *string `json:"name,omitempty"`
 	Value *string `json:"value,omitempty"`
@@ -603,7 +546,6 @@ type HTTPHeaderApplyConfiguration struct {
 
 // PersistentVolumeClaimConditionApplyConfiguration represents a declarative configuration of the PersistentVolumeClaimCondition type for use
 // with apply.
-// +kubebuilder:object:root=true
 type PersistentVolumeClaimConditionApplyConfiguration struct {
 	Type               *string      `json:"type,omitempty"`
 	Status             *string      `json:"status,omitempty"`
@@ -615,7 +557,6 @@ type PersistentVolumeClaimConditionApplyConfiguration struct {
 
 // ContainerPortApplyConfiguration represents a declarative configuration of the ContainerPort type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ContainerPortApplyConfiguration struct {
 	Name          *string `json:"name,omitempty"`
 	HostPort      *int32  `json:"hostPort,omitempty"`
@@ -626,14 +567,12 @@ type ContainerPortApplyConfiguration struct {
 
 // DownwardAPIProjectionApplyConfiguration represents a declarative configuration of the DownwardAPIProjection type for use
 // with apply.
-// +kubebuilder:object:root=true
 type DownwardAPIProjectionApplyConfiguration struct {
 	Items []DownwardAPIVolumeFileApplyConfiguration `json:"items,omitempty"`
 }
 
 // WindowsSecurityContextOptionsApplyConfiguration represents a declarative configuration of the WindowsSecurityContextOptions type for use
 // with apply.
-// +kubebuilder:object:root=true
 type WindowsSecurityContextOptionsApplyConfiguration struct {
 	GMSACredentialSpecName *string `json:"gmsaCredentialSpecName,omitempty"`
 	GMSACredentialSpec     *string `json:"gmsaCredentialSpec,omitempty"`
@@ -643,14 +582,12 @@ type WindowsSecurityContextOptionsApplyConfiguration struct {
 
 // ScopeSelectorApplyConfiguration represents a declarative configuration of the ScopeSelector type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ScopeSelectorApplyConfiguration struct {
 	MatchExpressions []ScopedResourceSelectorRequirementApplyConfiguration `json:"matchExpressions,omitempty"`
 }
 
 // VolumeProjectionApplyConfiguration represents a declarative configuration of the VolumeProjection type for use
 // with apply.
-// +kubebuilder:object:root=true
 type VolumeProjectionApplyConfiguration struct {
 	Secret              *SecretProjectionApplyConfiguration              `json:"secret,omitempty"`
 	DownwardAPI         *DownwardAPIProjectionApplyConfiguration         `json:"downwardAPI,omitempty"`
@@ -660,7 +597,6 @@ type VolumeProjectionApplyConfiguration struct {
 
 // NodeSelectorRequirementApplyConfiguration represents a declarative configuration of the NodeSelectorRequirement type for use
 // with apply.
-// +kubebuilder:object:root=true
 type NodeSelectorRequirementApplyConfiguration struct {
 	Key      *string  `json:"key,omitempty"`
 	Operator *string  `json:"operator,omitempty"`
@@ -669,7 +605,6 @@ type NodeSelectorRequirementApplyConfiguration struct {
 
 // ServiceAccountApplyConfiguration represents a declarative configuration of the ServiceAccount type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ServiceAccountApplyConfiguration struct {
 	metav1.TypeMeta              `json:",inline"`
 	metav1.ObjectMeta            `json:"metadata,omitempty"`
@@ -680,7 +615,6 @@ type ServiceAccountApplyConfiguration struct {
 
 // ClaimSourceApplyConfiguration represents a declarative configuration of the ClaimSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ClaimSourceApplyConfiguration struct {
 	ResourceClaimName         *string `json:"resourceClaimName,omitempty"`
 	ResourceClaimTemplateName *string `json:"resourceClaimTemplateName,omitempty"`
@@ -688,7 +622,6 @@ type ClaimSourceApplyConfiguration struct {
 
 // ContainerStateTerminatedApplyConfiguration represents a declarative configuration of the ContainerStateTerminated type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ContainerStateTerminatedApplyConfiguration struct {
 	ExitCode    *int32       `json:"exitCode,omitempty"`
 	Signal      *int32       `json:"signal,omitempty"`
@@ -701,7 +634,6 @@ type ContainerStateTerminatedApplyConfiguration struct {
 
 // PortStatusApplyConfiguration represents a declarative configuration of the PortStatus type for use
 // with apply.
-// +kubebuilder:object:root=true
 type PortStatusApplyConfiguration struct {
 	Port     *int32  `json:"port,omitempty"`
 	Protocol string  `json:"protocol,omitempty"`
@@ -710,7 +642,6 @@ type PortStatusApplyConfiguration struct {
 
 // StorageOSVolumeSourceApplyConfiguration represents a declarative configuration of the StorageOSVolumeSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type StorageOSVolumeSourceApplyConfiguration struct {
 	VolumeName      *string                                 `json:"volumeName,omitempty"`
 	VolumeNamespace *string                                 `json:"volumeNamespace,omitempty"`
@@ -721,7 +652,6 @@ type StorageOSVolumeSourceApplyConfiguration struct {
 
 // PodStatusApplyConfiguration represents a declarative configuration of the PodStatus type for use
 // with apply.
-// +kubebuilder:object:root=true
 type PodStatusApplyConfiguration struct {
 	Phase                      *string                             `json:"phase,omitempty"`
 	Conditions                 []PodConditionApplyConfiguration    `json:"conditions,omitempty"`
@@ -741,14 +671,12 @@ type PodStatusApplyConfiguration struct {
 
 // ContainerStateRunningApplyConfiguration represents a declarative configuration of the ContainerStateRunning type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ContainerStateRunningApplyConfiguration struct {
 	StartedAt *metav1.Time `json:"startedAt,omitempty"`
 }
 
 // ServiceAccountTokenProjectionApplyConfiguration represents a declarative configuration of the ServiceAccountTokenProjection type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ServiceAccountTokenProjectionApplyConfiguration struct {
 	Audience          *string `json:"audience,omitempty"`
 	ExpirationSeconds *int64  `json:"expirationSeconds,omitempty"`
@@ -757,7 +685,6 @@ type ServiceAccountTokenProjectionApplyConfiguration struct {
 
 // ProbeApplyConfiguration represents a declarative configuration of the Probe type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ProbeApplyConfiguration struct {
 	ProbeHandlerApplyConfiguration `json:",inline"`
 	InitialDelaySeconds            *int32 `json:"initialDelaySeconds,omitempty"`
@@ -770,7 +697,6 @@ type ProbeApplyConfiguration struct {
 
 // ObjectReferenceApplyConfiguration represents a declarative configuration of the ObjectReference type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ObjectReferenceApplyConfiguration struct {
 	Kind            *string    `json:"kind,omitempty"`
 	Namespace       *string    `json:"namespace,omitempty"`
@@ -783,14 +709,12 @@ type ObjectReferenceApplyConfiguration struct {
 
 // LoadBalancerStatusApplyConfiguration represents a declarative configuration of the LoadBalancerStatus type for use
 // with apply.
-// +kubebuilder:object:root=true
 type LoadBalancerStatusApplyConfiguration struct {
 	Ingress []LoadBalancerIngressApplyConfiguration `json:"ingress,omitempty"`
 }
 
 // LifecycleApplyConfiguration represents a declarative configuration of the Lifecycle type for use
 // with apply.
-// +kubebuilder:object:root=true
 type LifecycleApplyConfiguration struct {
 	PostStart *LifecycleHandlerApplyConfiguration `json:"postStart,omitempty"`
 	PreStop   *LifecycleHandlerApplyConfiguration `json:"preStop,omitempty"`
@@ -798,7 +722,6 @@ type LifecycleApplyConfiguration struct {
 
 // FlexPersistentVolumeSourceApplyConfiguration represents a declarative configuration of the FlexPersistentVolumeSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type FlexPersistentVolumeSourceApplyConfiguration struct {
 	Driver    *string                            `json:"driver,omitempty"`
 	FSType    *string                            `json:"fsType,omitempty"`
@@ -809,7 +732,6 @@ type FlexPersistentVolumeSourceApplyConfiguration struct {
 
 // PodAntiAffinityApplyConfiguration represents a declarative configuration of the PodAntiAffinity type for use
 // with apply.
-// +kubebuilder:object:root=true
 type PodAntiAffinityApplyConfiguration struct {
 	RequiredDuringSchedulingIgnoredDuringExecution  []PodAffinityTermApplyConfiguration         `json:"requiredDuringSchedulingIgnoredDuringExecution,omitempty"`
 	PreferredDuringSchedulingIgnoredDuringExecution []WeightedPodAffinityTermApplyConfiguration `json:"preferredDuringSchedulingIgnoredDuringExecution,omitempty"`
@@ -817,14 +739,12 @@ type PodAntiAffinityApplyConfiguration struct {
 
 // NodeConfigSourceApplyConfiguration represents a declarative configuration of the NodeConfigSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type NodeConfigSourceApplyConfiguration struct {
 	ConfigMap *ConfigMapNodeConfigSourceApplyConfiguration `json:"configMap,omitempty"`
 }
 
 // EndpointAddressApplyConfiguration represents a declarative configuration of the EndpointAddress type for use
 // with apply.
-// +kubebuilder:object:root=true
 type EndpointAddressApplyConfiguration struct {
 	IP        *string                            `json:"ip,omitempty"`
 	Hostname  *string                            `json:"hostname,omitempty"`
@@ -834,7 +754,6 @@ type EndpointAddressApplyConfiguration struct {
 
 // SecretApplyConfiguration represents a declarative configuration of the Secret type for use
 // with apply.
-// +kubebuilder:object:root=true
 type SecretApplyConfiguration struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
@@ -846,7 +765,6 @@ type SecretApplyConfiguration struct {
 
 // ProbeHandlerApplyConfiguration represents a declarative configuration of the ProbeHandler type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ProbeHandlerApplyConfiguration struct {
 	Exec      *ExecActionApplyConfiguration      `json:"exec,omitempty"`
 	HTTPGet   *HTTPGetActionApplyConfiguration   `json:"httpGet,omitempty"`
@@ -856,7 +774,6 @@ type ProbeHandlerApplyConfiguration struct {
 
 // CapabilitiesApplyConfiguration represents a declarative configuration of the Capabilities type for use
 // with apply.
-// +kubebuilder:object:root=true
 type CapabilitiesApplyConfiguration struct {
 	Add  []string `json:"add,omitempty"`
 	Drop []string `json:"drop,omitempty"`
@@ -864,7 +781,6 @@ type CapabilitiesApplyConfiguration struct {
 
 // PortworxVolumeSourceApplyConfiguration represents a declarative configuration of the PortworxVolumeSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type PortworxVolumeSourceApplyConfiguration struct {
 	VolumeID *string `json:"volumeID,omitempty"`
 	FSType   *string `json:"fsType,omitempty"`
@@ -873,7 +789,6 @@ type PortworxVolumeSourceApplyConfiguration struct {
 
 // ScaleIOVolumeSourceApplyConfiguration represents a declarative configuration of the ScaleIOVolumeSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ScaleIOVolumeSourceApplyConfiguration struct {
 	Gateway          *string                                 `json:"gateway,omitempty"`
 	System           *string                                 `json:"system,omitempty"`
@@ -889,14 +804,12 @@ type ScaleIOVolumeSourceApplyConfiguration struct {
 
 // TopologySelectorTermApplyConfiguration represents a declarative configuration of the TopologySelectorTerm type for use
 // with apply.
-// +kubebuilder:object:root=true
 type TopologySelectorTermApplyConfiguration struct {
 	MatchLabelExpressions []TopologySelectorLabelRequirementApplyConfiguration `json:"matchLabelExpressions,omitempty"`
 }
 
 // TypedLocalObjectReferenceApplyConfiguration represents a declarative configuration of the TypedLocalObjectReference type for use
 // with apply.
-// +kubebuilder:object:root=true
 type TypedLocalObjectReferenceApplyConfiguration struct {
 	APIGroup *string `json:"apiGroup,omitempty"`
 	Kind     *string `json:"kind,omitempty"`
@@ -905,7 +818,6 @@ type TypedLocalObjectReferenceApplyConfiguration struct {
 
 // GitRepoVolumeSourceApplyConfiguration represents a declarative configuration of the GitRepoVolumeSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type GitRepoVolumeSourceApplyConfiguration struct {
 	Repository *string `json:"repository,omitempty"`
 	Revision   *string `json:"revision,omitempty"`
@@ -914,7 +826,6 @@ type GitRepoVolumeSourceApplyConfiguration struct {
 
 // PodDNSConfigApplyConfiguration represents a declarative configuration of the PodDNSConfig type for use
 // with apply.
-// +kubebuilder:object:root=true
 type PodDNSConfigApplyConfiguration struct {
 	Nameservers []string                               `json:"nameservers,omitempty"`
 	Searches    []string                               `json:"searches,omitempty"`
@@ -923,7 +834,6 @@ type PodDNSConfigApplyConfiguration struct {
 
 // DownwardAPIVolumeFileApplyConfiguration represents a declarative configuration of the DownwardAPIVolumeFile type for use
 // with apply.
-// +kubebuilder:object:root=true
 type DownwardAPIVolumeFileApplyConfiguration struct {
 	Path             *string                                  `json:"path,omitempty"`
 	FieldRef         *ObjectFieldSelectorApplyConfiguration   `json:"fieldRef,omitempty"`
@@ -933,7 +843,6 @@ type DownwardAPIVolumeFileApplyConfiguration struct {
 
 // LifecycleHandlerApplyConfiguration represents a declarative configuration of the LifecycleHandler type for use
 // with apply.
-// +kubebuilder:object:root=true
 type LifecycleHandlerApplyConfiguration struct {
 	Exec      *ExecActionApplyConfiguration      `json:"exec,omitempty"`
 	HTTPGet   *HTTPGetActionApplyConfiguration   `json:"httpGet,omitempty"`
@@ -942,14 +851,12 @@ type LifecycleHandlerApplyConfiguration struct {
 
 // PodIPApplyConfiguration represents a declarative configuration of the PodIP type for use
 // with apply.
-// +kubebuilder:object:root=true
 type PodIPApplyConfiguration struct {
 	IP *string `json:"ip,omitempty"`
 }
 
 // SecurityContextApplyConfiguration represents a declarative configuration of the SecurityContext type for use
 // with apply.
-// +kubebuilder:object:root=true
 type SecurityContextApplyConfiguration struct {
 	Capabilities             *CapabilitiesApplyConfiguration                  `json:"capabilities,omitempty"`
 	Privileged               *bool                                            `json:"privileged,omitempty"`
@@ -966,7 +873,6 @@ type SecurityContextApplyConfiguration struct {
 
 // VolumeDeviceApplyConfiguration represents a declarative configuration of the VolumeDevice type for use
 // with apply.
-// +kubebuilder:object:root=true
 type VolumeDeviceApplyConfiguration struct {
 	Name       *string `json:"name,omitempty"`
 	DevicePath *string `json:"devicePath,omitempty"`
@@ -974,7 +880,6 @@ type VolumeDeviceApplyConfiguration struct {
 
 // NodeConfigStatusApplyConfiguration represents a declarative configuration of the NodeConfigStatus type for use
 // with apply.
-// +kubebuilder:object:root=true
 type NodeConfigStatusApplyConfiguration struct {
 	Assigned      *NodeConfigSourceApplyConfiguration `json:"assigned,omitempty"`
 	Active        *NodeConfigSourceApplyConfiguration `json:"active,omitempty"`
@@ -984,7 +889,6 @@ type NodeConfigStatusApplyConfiguration struct {
 
 // EventSeriesApplyConfiguration represents a declarative configuration of the EventSeries type for use
 // with apply.
-// +kubebuilder:object:root=true
 type EventSeriesApplyConfiguration struct {
 	Count            *int32            `json:"count,omitempty"`
 	LastObservedTime *metav1.MicroTime `json:"lastObservedTime,omitempty"`
@@ -992,7 +896,6 @@ type EventSeriesApplyConfiguration struct {
 
 // ConfigMapApplyConfiguration represents a declarative configuration of the ConfigMap type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ConfigMapApplyConfiguration struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
@@ -1003,7 +906,6 @@ type ConfigMapApplyConfiguration struct {
 
 // EnvVarApplyConfiguration represents a declarative configuration of the EnvVar type for use
 // with apply.
-// +kubebuilder:object:root=true
 type EnvVarApplyConfiguration struct {
 	Name      *string                         `json:"name,omitempty"`
 	Value     *string                         `json:"value,omitempty"`
@@ -1012,7 +914,6 @@ type EnvVarApplyConfiguration struct {
 
 // EndpointSubsetApplyConfiguration represents a declarative configuration of the EndpointSubset type for use
 // with apply.
-// +kubebuilder:object:root=true
 type EndpointSubsetApplyConfiguration struct {
 	Addresses         []EndpointAddressApplyConfiguration `json:"addresses,omitempty"`
 	NotReadyAddresses []EndpointAddressApplyConfiguration `json:"notReadyAddresses,omitempty"`
@@ -1021,14 +922,12 @@ type EndpointSubsetApplyConfiguration struct {
 
 // ResourceClaimApplyConfiguration represents a declarative configuration of the ResourceClaim type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ResourceClaimApplyConfiguration struct {
 	Name *string `json:"name,omitempty"`
 }
 
 // VolumeApplyConfiguration represents a declarative configuration of the Volume type for use
 // with apply.
-// +kubebuilder:object:root=true
 type VolumeApplyConfiguration struct {
 	Name                           *string `json:"name,omitempty"`
 	VolumeSourceApplyConfiguration `json:",inline"`
@@ -1036,7 +935,6 @@ type VolumeApplyConfiguration struct {
 
 // NodeSystemInfoApplyConfiguration represents a declarative configuration of the NodeSystemInfo type for use
 // with apply.
-// +kubebuilder:object:root=true
 type NodeSystemInfoApplyConfiguration struct {
 	MachineID               *string `json:"machineID,omitempty"`
 	SystemUUID              *string `json:"systemUUID,omitempty"`
@@ -1052,7 +950,6 @@ type NodeSystemInfoApplyConfiguration struct {
 
 // ContainerApplyConfiguration represents a declarative configuration of the Container type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ContainerApplyConfiguration struct {
 	Name                     *string                                   `json:"name,omitempty"`
 	Image                    *string                                   `json:"image,omitempty"`
@@ -1081,7 +978,6 @@ type ContainerApplyConfiguration struct {
 
 // SecretReferenceApplyConfiguration represents a declarative configuration of the SecretReference type for use
 // with apply.
-// +kubebuilder:object:root=true
 type SecretReferenceApplyConfiguration struct {
 	Name      *string `json:"name,omitempty"`
 	Namespace *string `json:"namespace,omitempty"`
@@ -1089,7 +985,6 @@ type SecretReferenceApplyConfiguration struct {
 
 // SecretProjectionApplyConfiguration represents a declarative configuration of the SecretProjection type for use
 // with apply.
-// +kubebuilder:object:root=true
 type SecretProjectionApplyConfiguration struct {
 	LocalObjectReferenceApplyConfiguration `json:",inline"`
 	Items                                  []KeyToPathApplyConfiguration `json:"items,omitempty"`
@@ -1098,7 +993,6 @@ type SecretProjectionApplyConfiguration struct {
 
 // PersistentVolumeSpecApplyConfiguration represents a declarative configuration of the PersistentVolumeSpec type for use
 // with apply.
-// +kubebuilder:object:root=true
 type PersistentVolumeSpecApplyConfiguration struct {
 	Capacity                                 *map[string]resource.Quantity `json:"capacity,omitempty"`
 	PersistentVolumeSourceApplyConfiguration `json:",inline"`
@@ -1113,7 +1007,6 @@ type PersistentVolumeSpecApplyConfiguration struct {
 
 // SELinuxOptionsApplyConfiguration represents a declarative configuration of the SELinuxOptions type for use
 // with apply.
-// +kubebuilder:object:root=true
 type SELinuxOptionsApplyConfiguration struct {
 	User  *string `json:"user,omitempty"`
 	Role  *string `json:"role,omitempty"`
@@ -1123,7 +1016,6 @@ type SELinuxOptionsApplyConfiguration struct {
 
 // PodTemplateSpecApplyConfiguration represents a declarative configuration of the PodTemplateSpec type for use
 // with apply.
-// +kubebuilder:object:root=true
 type PodTemplateSpecApplyConfiguration struct {
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 	Spec              *PodSpecApplyConfiguration `json:"spec,omitempty"`
@@ -1131,7 +1023,6 @@ type PodTemplateSpecApplyConfiguration struct {
 
 // FlexVolumeSourceApplyConfiguration represents a declarative configuration of the FlexVolumeSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type FlexVolumeSourceApplyConfiguration struct {
 	Driver    *string                                 `json:"driver,omitempty"`
 	FSType    *string                                 `json:"fsType,omitempty"`
@@ -1142,7 +1033,6 @@ type FlexVolumeSourceApplyConfiguration struct {
 
 // ConfigMapProjectionApplyConfiguration represents a declarative configuration of the ConfigMapProjection type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ConfigMapProjectionApplyConfiguration struct {
 	LocalObjectReferenceApplyConfiguration `json:",inline"`
 	Items                                  []KeyToPathApplyConfiguration `json:"items,omitempty"`
@@ -1151,7 +1041,6 @@ type ConfigMapProjectionApplyConfiguration struct {
 
 // GlusterfsVolumeSourceApplyConfiguration represents a declarative configuration of the GlusterfsVolumeSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type GlusterfsVolumeSourceApplyConfiguration struct {
 	EndpointsName *string `json:"endpoints,omitempty"`
 	Path          *string `json:"path,omitempty"`
@@ -1160,7 +1049,6 @@ type GlusterfsVolumeSourceApplyConfiguration struct {
 
 // PodAffinityTermApplyConfiguration represents a declarative configuration of the PodAffinityTerm type for use
 // with apply.
-// +kubebuilder:object:root=true
 type PodAffinityTermApplyConfiguration struct {
 	LabelSelector     LabelSelectorApplyConfiguration `json:"labelSelector,omitempty"`
 	Namespaces        []string                        `json:"namespaces,omitempty"`
@@ -1170,7 +1058,6 @@ type PodAffinityTermApplyConfiguration struct {
 
 // EndpointsApplyConfiguration represents a declarative configuration of the Endpoints type for use
 // with apply.
-// +kubebuilder:object:root=true
 type EndpointsApplyConfiguration struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
@@ -1179,7 +1066,6 @@ type EndpointsApplyConfiguration struct {
 
 // WeightedPodAffinityTermApplyConfiguration represents a declarative configuration of the WeightedPodAffinityTerm type for use
 // with apply.
-// +kubebuilder:object:root=true
 type WeightedPodAffinityTermApplyConfiguration struct {
 	Weight          *int32                             `json:"weight,omitempty"`
 	PodAffinityTerm *PodAffinityTermApplyConfiguration `json:"podAffinityTerm,omitempty"`
@@ -1187,7 +1073,6 @@ type WeightedPodAffinityTermApplyConfiguration struct {
 
 // TolerationApplyConfiguration represents a declarative configuration of the Toleration type for use
 // with apply.
-// +kubebuilder:object:root=true
 type TolerationApplyConfiguration struct {
 	Key               *string `json:"key,omitempty"`
 	Operator          *string `json:"operator,omitempty"`
@@ -1198,7 +1083,6 @@ type TolerationApplyConfiguration struct {
 
 // HostPathVolumeSourceApplyConfiguration represents a declarative configuration of the HostPathVolumeSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type HostPathVolumeSourceApplyConfiguration struct {
 	Path *string `json:"path,omitempty"`
 	Type *string `json:"type,omitempty"`
@@ -1206,7 +1090,6 @@ type HostPathVolumeSourceApplyConfiguration struct {
 
 // TCPSocketActionApplyConfiguration represents a declarative configuration of the TCPSocketAction type for use
 // with apply.
-// +kubebuilder:object:root=true
 type TCPSocketActionApplyConfiguration struct {
 	Port *intstr.IntOrString `json:"port,omitempty"`
 	Host *string             `json:"host,omitempty"`
@@ -1214,7 +1097,6 @@ type TCPSocketActionApplyConfiguration struct {
 
 // PodConditionApplyConfiguration represents a declarative configuration of the PodCondition type for use
 // with apply.
-// +kubebuilder:object:root=true
 type PodConditionApplyConfiguration struct {
 	Type               *string      `json:"type,omitempty"`
 	Status             *string      `json:"status,omitempty"`
@@ -1226,7 +1108,6 @@ type PodConditionApplyConfiguration struct {
 
 // PersistentVolumeApplyConfiguration represents a declarative configuration of the PersistentVolume type for use
 // with apply.
-// +kubebuilder:object:root=true
 type PersistentVolumeApplyConfiguration struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
@@ -1236,7 +1117,6 @@ type PersistentVolumeApplyConfiguration struct {
 
 // ConfigMapVolumeSourceApplyConfiguration represents a declarative configuration of the ConfigMapVolumeSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ConfigMapVolumeSourceApplyConfiguration struct {
 	LocalObjectReferenceApplyConfiguration `json:",inline"`
 	Items                                  []KeyToPathApplyConfiguration `json:"items,omitempty"`
@@ -1246,7 +1126,6 @@ type ConfigMapVolumeSourceApplyConfiguration struct {
 
 // SecretVolumeSourceApplyConfiguration represents a declarative configuration of the SecretVolumeSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type SecretVolumeSourceApplyConfiguration struct {
 	SecretName  *string                       `json:"secretName,omitempty"`
 	Items       []KeyToPathApplyConfiguration `json:"items,omitempty"`
@@ -1256,7 +1135,6 @@ type SecretVolumeSourceApplyConfiguration struct {
 
 // EnvVarSourceApplyConfiguration represents a declarative configuration of the EnvVarSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type EnvVarSourceApplyConfiguration struct {
 	FieldRef         *ObjectFieldSelectorApplyConfiguration   `json:"fieldRef,omitempty"`
 	ResourceFieldRef *ResourceFieldSelectorApplyConfiguration `json:"resourceFieldRef,omitempty"`
@@ -1266,7 +1144,6 @@ type EnvVarSourceApplyConfiguration struct {
 
 // ISCSIPersistentVolumeSourceApplyConfiguration represents a declarative configuration of the ISCSIPersistentVolumeSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ISCSIPersistentVolumeSourceApplyConfiguration struct {
 	TargetPortal      *string                            `json:"targetPortal,omitempty"`
 	IQN               *string                            `json:"iqn,omitempty"`
@@ -1283,7 +1160,6 @@ type ISCSIPersistentVolumeSourceApplyConfiguration struct {
 
 // TopologySpreadConstraintApplyConfiguration represents a declarative configuration of the TopologySpreadConstraint type for use
 // with apply.
-// +kubebuilder:object:root=true
 type TopologySpreadConstraintApplyConfiguration struct {
 	MaxSkew            *int32                          `json:"maxSkew,omitempty"`
 	TopologyKey        *string                         `json:"topologyKey,omitempty"`
@@ -1297,7 +1173,6 @@ type TopologySpreadConstraintApplyConfiguration struct {
 
 // PodResourceClaimApplyConfiguration represents a declarative configuration of the PodResourceClaim type for use
 // with apply.
-// +kubebuilder:object:root=true
 type PodResourceClaimApplyConfiguration struct {
 	Name   *string                        `json:"name,omitempty"`
 	Source *ClaimSourceApplyConfiguration `json:"source,omitempty"`
@@ -1305,14 +1180,12 @@ type PodResourceClaimApplyConfiguration struct {
 
 // ClientIPConfigApplyConfiguration represents a declarative configuration of the ClientIPConfig type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ClientIPConfigApplyConfiguration struct {
 	TimeoutSeconds *int32 `json:"timeoutSeconds,omitempty"`
 }
 
 // SeccompProfileApplyConfiguration represents a declarative configuration of the SeccompProfile type for use
 // with apply.
-// +kubebuilder:object:root=true
 type SeccompProfileApplyConfiguration struct {
 	Type             *string `json:"type,omitempty"`
 	LocalhostProfile *string `json:"localhostProfile,omitempty"`
@@ -1320,7 +1193,6 @@ type SeccompProfileApplyConfiguration struct {
 
 // HostAliasApplyConfiguration represents a declarative configuration of the HostAlias type for use
 // with apply.
-// +kubebuilder:object:root=true
 type HostAliasApplyConfiguration struct {
 	IP        *string  `json:"ip,omitempty"`
 	Hostnames []string `json:"hostnames,omitempty"`
@@ -1328,21 +1200,18 @@ type HostAliasApplyConfiguration struct {
 
 // VolumeNodeAffinityApplyConfiguration represents a declarative configuration of the VolumeNodeAffinity type for use
 // with apply.
-// +kubebuilder:object:root=true
 type VolumeNodeAffinityApplyConfiguration struct {
 	Required NodeSelectorApplyConfiguration `json:"required,omitempty"`
 }
 
 // ExecActionApplyConfiguration represents a declarative configuration of the ExecAction type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ExecActionApplyConfiguration struct {
 	Command []string `json:"command,omitempty"`
 }
 
 // SysctlApplyConfiguration represents a declarative configuration of the Sysctl type for use
 // with apply.
-// +kubebuilder:object:root=true
 type SysctlApplyConfiguration struct {
 	Name  *string `json:"name,omitempty"`
 	Value *string `json:"value,omitempty"`
@@ -1350,7 +1219,6 @@ type SysctlApplyConfiguration struct {
 
 // NodeSelectorTermApplyConfiguration represents a declarative configuration of the NodeSelectorTerm type for use
 // with apply.
-// +kubebuilder:object:root=true
 type NodeSelectorTermApplyConfiguration struct {
 	MatchExpressions []NodeSelectorRequirementApplyConfiguration `json:"matchExpressions,omitempty"`
 	MatchFields      []NodeSelectorRequirementApplyConfiguration `json:"matchFields,omitempty"`
@@ -1358,7 +1226,6 @@ type NodeSelectorTermApplyConfiguration struct {
 
 // RBDVolumeSourceApplyConfiguration represents a declarative configuration of the RBDVolumeSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type RBDVolumeSourceApplyConfiguration struct {
 	CephMonitors []string                                `json:"monitors,omitempty"`
 	RBDImage     *string                                 `json:"image,omitempty"`
@@ -1372,7 +1239,6 @@ type RBDVolumeSourceApplyConfiguration struct {
 
 // TopologySelectorLabelRequirementApplyConfiguration represents a declarative configuration of the TopologySelectorLabelRequirement type for use
 // with apply.
-// +kubebuilder:object:root=true
 type TopologySelectorLabelRequirementApplyConfiguration struct {
 	Key    *string  `json:"key,omitempty"`
 	Values []string `json:"values,omitempty"`
@@ -1380,7 +1246,6 @@ type TopologySelectorLabelRequirementApplyConfiguration struct {
 
 // PodAffinityApplyConfiguration represents a declarative configuration of the PodAffinity type for use
 // with apply.
-// +kubebuilder:object:root=true
 type PodAffinityApplyConfiguration struct {
 	RequiredDuringSchedulingIgnoredDuringExecution  []PodAffinityTermApplyConfiguration         `json:"requiredDuringSchedulingIgnoredDuringExecution,omitempty"`
 	PreferredDuringSchedulingIgnoredDuringExecution []WeightedPodAffinityTermApplyConfiguration `json:"preferredDuringSchedulingIgnoredDuringExecution,omitempty"`
@@ -1388,7 +1253,6 @@ type PodAffinityApplyConfiguration struct {
 
 // ReplicationControllerConditionApplyConfiguration represents a declarative configuration of the ReplicationControllerCondition type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ReplicationControllerConditionApplyConfiguration struct {
 	Type               *string      `json:"type,omitempty"`
 	Status             *string      `json:"status,omitempty"`
@@ -1399,7 +1263,6 @@ type ReplicationControllerConditionApplyConfiguration struct {
 
 // ConfigMapKeySelectorApplyConfiguration represents a declarative configuration of the ConfigMapKeySelector type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ConfigMapKeySelectorApplyConfiguration struct {
 	LocalObjectReferenceApplyConfiguration `json:",inline"`
 	Key                                    *string `json:"key,omitempty"`
@@ -1408,7 +1271,6 @@ type ConfigMapKeySelectorApplyConfiguration struct {
 
 // PreferredSchedulingTermApplyConfiguration represents a declarative configuration of the PreferredSchedulingTerm type for use
 // with apply.
-// +kubebuilder:object:root=true
 type PreferredSchedulingTermApplyConfiguration struct {
 	Weight     *int32                              `json:"weight,omitempty"`
 	Preference *NodeSelectorTermApplyConfiguration `json:"preference,omitempty"`
@@ -1416,7 +1278,6 @@ type PreferredSchedulingTermApplyConfiguration struct {
 
 // PodSecurityContextApplyConfiguration represents a declarative configuration of the PodSecurityContext type for use
 // with apply.
-// +kubebuilder:object:root=true
 type PodSecurityContextApplyConfiguration struct {
 	SELinuxOptions      *SELinuxOptionsApplyConfiguration                `json:"seLinuxOptions,omitempty"`
 	WindowsOptions      *WindowsSecurityContextOptionsApplyConfiguration `json:"windowsOptions,omitempty"`
@@ -1432,7 +1293,6 @@ type PodSecurityContextApplyConfiguration struct {
 
 // ContainerStateWaitingApplyConfiguration represents a declarative configuration of the ContainerStateWaiting type for use
 // with apply.
-// +kubebuilder:object:root=true
 type ContainerStateWaitingApplyConfiguration struct {
 	Reason  *string `json:"reason,omitempty"`
 	Message *string `json:"message,omitempty"`
@@ -1440,7 +1300,6 @@ type ContainerStateWaitingApplyConfiguration struct {
 
 // AttachedVolumeApplyConfiguration represents a declarative configuration of the AttachedVolume type for use
 // with apply.
-// +kubebuilder:object:root=true
 type AttachedVolumeApplyConfiguration struct {
 	Name       *string `json:"name,omitempty"`
 	DevicePath *string `json:"devicePath,omitempty"`
@@ -1448,7 +1307,6 @@ type AttachedVolumeApplyConfiguration struct {
 
 // EmptyDirVolumeSourceApplyConfiguration represents a declarative configuration of the EmptyDirVolumeSource type for use
 // with apply.
-// +kubebuilder:object:root=true
 type EmptyDirVolumeSourceApplyConfiguration struct {
 	Medium    *string            `json:"medium,omitempty"`
 	SizeLimit *resource.Quantity `json:"sizeLimit,omitempty"`
@@ -1456,7 +1314,6 @@ type EmptyDirVolumeSourceApplyConfiguration struct {
 
 // LabelSelectorApplyConfiguration represents an declarative configuration of the LabelSelector type for use
 // with apply.
-// +kubebuilder:object:root=true
 type LabelSelectorApplyConfiguration struct {
 	MatchLabels      map[string]string                            `json:"matchLabels,omitempty"`
 	MatchExpressions []LabelSelectorRequirementApplyConfiguration `json:"matchExpressions,omitempty"`
@@ -1464,7 +1321,6 @@ type LabelSelectorApplyConfiguration struct {
 
 // LabelSelectorRequirementApplyConfiguration represents an declarative configuration of the LabelSelectorRequirement type for use
 // with apply.
-// +kubebuilder:object:root=true
 type LabelSelectorRequirementApplyConfiguration struct {
 	Key      *string  `json:"key,omitempty"`
 	Operator *string  `json:"operator,omitempty"`
