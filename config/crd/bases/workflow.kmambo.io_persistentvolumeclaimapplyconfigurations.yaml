@@ -1,0 +1,196 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.12.0
+  name: persistentvolumeclaimapplyconfigurations.workflow.kmambo.io
+spec:
+  group: workflow.kmambo.io
+  names:
+    kind: PersistentVolumeClaimApplyConfiguration
+    listKind: PersistentVolumeClaimApplyConfigurationList
+    plural: persistentvolumeclaimapplyconfigurations
+    singular: persistentvolumeclaimapplyconfiguration
+  scope: Namespaced
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: PersistentVolumeClaimApplyConfiguration represents a declarative
+          configuration of the PersistentVolumeClaim type for use with apply.
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: PersistentVolumeClaimSpecApplyConfiguration represents a
+              declarative configuration of the PersistentVolumeClaimSpec type for
+              use with apply.
+            properties:
+              accessModes:
+                items:
+                  type: string
+                type: array
+              dataSource:
+                description: TypedLocalObjectReferenceApplyConfiguration represents
+                  a declarative configuration of the TypedLocalObjectReference type
+                  for use with apply.
+                properties:
+                  apiGroup:
+                    type: string
+                  kind:
+                    type: string
+                  name:
+                    type: string
+                type: object
+              dataSourceRef:
+                description: TypedObjectReferenceApplyConfiguration represents a declarative
+                  configuration of the TypedObjectReference type for use with apply.
+                properties:
+                  apiGroup:
+                    type: string
+                  kind:
+                    type: string
+                  name:
+                    type: string
+                  namespace:
+                    type: string
+                type: object
+              resources:
+                description: ResourceRequirementsApplyConfiguration represents a declarative
+                  configuration of the ResourceRequirements type for use with apply.
+                properties:
+                  claims:
+                    items:
+                      description: ResourceClaimApplyConfiguration represents a declarative
+                        configuration of the ResourceClaim type for use with apply.
+                      properties:
+                        name:
+                          type: string
+                      type: object
+                    type: array
+                  limits:
+                    additionalProperties:
+                      anyOf:
+                      - type: integer
+                      - type: string
+                      pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                      x-kubernetes-int-or-string: true
+                    description: ResourceList is a set of (resource name, quantity)
+                      pairs.
+                    type: object
+                  requests:
+                    additionalProperties:
+                      anyOf:
+                      - type: integer
+                      - type: string
+                      pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                      x-kubernetes-int-or-string: true
+                    description: ResourceList is a set of (resource name, quantity)
+                      pairs.
+                    type: object
+                type: object
+              selector:
+                description: LabelSelectorApplyConfiguration represents an declarative
+                  configuration of the LabelSelector type for use with apply.
+                properties:
+                  matchExpressions:
+                    items:
+                      description: LabelSelectorRequirementApplyConfiguration represents
+                        an declarative configuration of the LabelSelectorRequirement
+                        type for use with apply.
+                      properties:
+                        key:
+                          type: string
+                        operator:
+                          description: A label selector operator is the set of operators
+                            that can be used in a selector requirement.
+                          type: string
+                        values:
+                          items:
+                            type: string
+                          type: array
+                      type: object
+                    type: array
+                  matchLabels:
+                    additionalProperties:
+                      type: string
+                    type: object
+                type: object
+              storageClassName:
+                type: string
+              volumeMode:
+                description: PersistentVolumeMode describes how a volume is intended
+                  to be consumed, either Block or Filesystem.
+                type: string
+              volumeName:
+                type: string
+            type: object
+          status:
+            description: PersistentVolumeClaimStatusApplyConfiguration represents
+              a declarative configuration of the PersistentVolumeClaimStatus type
+              for use with apply.
+            properties:
+              accessModes:
+                items:
+                  type: string
+                type: array
+              allocatedResources:
+                additionalProperties:
+                  anyOf:
+                  - type: integer
+                  - type: string
+                  pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                  x-kubernetes-int-or-string: true
+                description: ResourceList is a set of (resource name, quantity) pairs.
+                type: object
+              capacity:
+                additionalProperties:
+                  anyOf:
+                  - type: integer
+                  - type: string
+                  pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                  x-kubernetes-int-or-string: true
+                description: ResourceList is a set of (resource name, quantity) pairs.
+                type: object
+              conditions:
+                items:
+                  description: PersistentVolumeClaimConditionApplyConfiguration represents
+                    a declarative configuration of the PersistentVolumeClaimCondition
+                    type for use with apply.
+                  properties:
+                    lastProbeTime:
+                      format: date-time
+                      type: string
+                    lastTransitionTime:
+                      format: date-time
+                      type: string
+                    message:
+                      type: string
+                    reason:
+                      type: string
+                    status:
+                      type: string
+                    type:
+                      description: PersistentVolumeClaimConditionType is a valid value
+                        of PersistentVolumeClaimCondition.Type
+                      type: string
+                  type: object
+                type: array
+              phase:
+                type: string
+              resizeStatus: {}
+            type: object
+        type: object
+    served: true
+    storage: true

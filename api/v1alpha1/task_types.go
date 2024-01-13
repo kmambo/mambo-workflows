@@ -18,12 +18,7 @@ package v1alpha1
 
 import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	corev1 "k8s.io/client-go/applyconfigurations/core/v1"
 )
-
-// TaskSpecApplyConfiguration is the same as the PodSpec except it
-// +kubebuilder:object:root=true
-type TaskSpecApplyConfiguration corev1.PodSpecApplyConfiguration
 
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
@@ -35,7 +30,7 @@ type TaskSpec struct {
 	// Important: Run "make" to regenerate code after modifying this file
 
 	// +kubebuilder:validation:Required
-	Template *TaskSpecApplyConfiguration `json:"template,omitempty"`
+	Template PodSpecApplyConfiguration `json:"template,omitempty"`
 }
 
 // TaskStatus defines the observed state of Task

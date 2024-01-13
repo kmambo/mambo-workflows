@@ -35,8 +35,6 @@ spec:
             description: WorkflowSpec defines the desired state of Workflow
             properties:
               foo:
-                description: Foo is an example field of Workflow. Edit workflow_types.go
-                  to remove/update
                 items:
                   description: TaskRefSpec defines the Task name so
                   properties:

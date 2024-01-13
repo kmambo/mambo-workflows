@@ -18,15 +18,10 @@ package v1alpha1
 
 import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	v1 "k8s.io/client-go/applyconfigurations/meta/v1"
 )
 
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
-
-// TaskLabelSelectorApplyConfiguration is very much akin to the selector used in PodSpec and allows
-// +kubebuilder:object:root=true
-type TaskLabelSelectorApplyConfiguration v1.LabelSelectorApplyConfiguration
 
 type SrcEventInterface struct {
 	Type string `json:"type"`
@@ -57,7 +52,6 @@ type WorkflowSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of Workflow. Edit workflow_types.go to remove/update
 	Tasks []TaskRefSpec `json:"foo,omitempty"`
 }
 
