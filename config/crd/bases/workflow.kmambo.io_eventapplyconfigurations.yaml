@@ -1,0 +1,137 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.14.0
+  name: eventapplyconfigurations.workflow.kmambo.io
+spec:
+  group: workflow.kmambo.io
+  names:
+    kind: EventApplyConfiguration
+    listKind: EventApplyConfigurationList
+    plural: eventapplyconfigurations
+    singular: eventapplyconfiguration
+  scope: Namespaced
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: |-
+          EventApplyConfiguration represents a declarative configuration of the Event type for use
+          with apply.
+        properties:
+          action:
+            type: string
+          apiVersion:
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+            type: string
+          count:
+            format: int32
+            type: integer
+          eventTime:
+            format: date-time
+            type: string
+          firstTimestamp:
+            format: date-time
+            type: string
+          involvedObject:
+            description: |-
+              ObjectReferenceApplyConfiguration represents a declarative configuration of the ObjectReference type for use
+              with apply.
+            properties:
+              apiVersion:
+                type: string
+              fieldPath:
+                type: string
+              kind:
+                type: string
+              name:
+                type: string
+              namespace:
+                type: string
+              resourceVersion:
+                type: string
+              uid:
+                description: |-
+                  UID is a type that holds unique ID values, including UUIDs.  Because we
+                  don't ONLY use UUIDs, this is an alias to string.  Being a type captures
+                  intent and helps make sure that UIDs and names do not get conflated.
+                type: string
+            type: object
+          kind:
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+            type: string
+          lastTimestamp:
+            format: date-time
+            type: string
+          message:
+            type: string
+          metadata:
+            type: object
+          reason:
+            type: string
+          related:
+            description: |-
+              ObjectReferenceApplyConfiguration represents a declarative configuration of the ObjectReference type for use
+              with apply.
+            properties:
+              apiVersion:
+                type: string
+              fieldPath:
+                type: string
+              kind:
+                type: string
+              name:
+                type: string
+              namespace:
+                type: string
+              resourceVersion:
+                type: string
+              uid:
+                description: |-
+                  UID is a type that holds unique ID values, including UUIDs.  Because we
+                  don't ONLY use UUIDs, this is an alias to string.  Being a type captures
+                  intent and helps make sure that UIDs and names do not get conflated.
+                type: string
+            type: object
+          reportingComponent:
+            type: string
+          reportingInstance:
+            type: string
+          series:
+            description: |-
+              EventSeriesApplyConfiguration represents a declarative configuration of the EventSeries type for use
+              with apply.
+            properties:
+              count:
+                format: int32
+                type: integer
+              lastObservedTime:
+                format: date-time
+                type: string
+            type: object
+          source:
+            description: |-
+              EventSourceApplyConfiguration represents a declarative configuration of the EventSource type for use
+              with apply.
+            properties:
+              component:
+                type: string
+              host:
+                type: string
+            type: object
+          type:
+            type: string
+        type: object
+    served: true
+    storage: true

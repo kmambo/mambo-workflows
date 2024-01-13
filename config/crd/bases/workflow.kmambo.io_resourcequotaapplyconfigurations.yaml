@@ -1,0 +1,98 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.12.0
+  name: resourcequotaapplyconfigurations.workflow.kmambo.io
+spec:
+  group: workflow.kmambo.io
+  names:
+    kind: ResourceQuotaApplyConfiguration
+    listKind: ResourceQuotaApplyConfigurationList
+    plural: resourcequotaapplyconfigurations
+    singular: resourcequotaapplyconfiguration
+  scope: Namespaced
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: ResourceQuotaApplyConfiguration represents a declarative configuration
+          of the ResourceQuota type for use with apply.
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: ResourceQuotaSpecApplyConfiguration represents a declarative
+              configuration of the ResourceQuotaSpec type for use with apply.
+            properties:
+              hard:
+                additionalProperties:
+                  anyOf:
+                  - type: integer
+                  - type: string
+                  pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                  x-kubernetes-int-or-string: true
+                type: object
+              scopeSelector:
+                description: ScopeSelectorApplyConfiguration represents a declarative
+                  configuration of the ScopeSelector type for use with apply.
+                properties:
+                  matchExpressions:
+                    items:
+                      description: ScopedResourceSelectorRequirementApplyConfiguration
+                        represents a declarative configuration of the ScopedResourceSelectorRequirement
+                        type for use with apply.
+                      properties:
+                        operator:
+                          type: string
+                        scopeName:
+                          type: string
+                        values:
+                          items:
+                            type: string
+                          type: array
+                      type: object
+                    type: array
+                type: object
+              scopes:
+                items:
+                  description: A ResourceQuotaScope defines a filter that must match
+                    each object tracked by a quota
+                  type: string
+                type: array
+            type: object
+          status:
+            description: ResourceQuotaStatusApplyConfiguration represents a declarative
+              configuration of the ResourceQuotaStatus type for use with apply.
+            properties:
+              hard:
+                additionalProperties:
+                  anyOf:
+                  - type: integer
+                  - type: string
+                  pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                  x-kubernetes-int-or-string: true
+                type: object
+              used:
+                additionalProperties:
+                  anyOf:
+                  - type: integer
+                  - type: string
+                  pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                  x-kubernetes-int-or-string: true
+                type: object
+            type: object
+        type: object
+    served: true
+    storage: true

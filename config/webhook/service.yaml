@@ -6,8 +6,8 @@ metadata:
     app.kubernetes.io/name: service
     app.kubernetes.io/instance: webhook-service
     app.kubernetes.io/component: webhook
-    app.kubernetes.io/created-by: kmambo-webhooks
-    app.kubernetes.io/part-of: kmambo-webhooks
+    app.kubernetes.io/created-by: kmambo-workflows
+    app.kubernetes.io/part-of: kmambo-workflows
     app.kubernetes.io/managed-by: kustomize
   name: webhook-service
   namespace: system

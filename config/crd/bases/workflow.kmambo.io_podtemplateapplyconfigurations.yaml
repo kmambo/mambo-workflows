@@ -4,20 +4,22 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.14.0
-  name: tasks.workflow.kmambo.io
+  name: podtemplateapplyconfigurations.workflow.kmambo.io
 spec:
   group: workflow.kmambo.io
   names:
-    kind: Task
-    listKind: TaskList
-    plural: tasks
-    singular: task
-  scope: Cluster
+    kind: PodTemplateApplyConfiguration
+    listKind: PodTemplateApplyConfigurationList
+    plural: podtemplateapplyconfigurations
+    singular: podtemplateapplyconfiguration
+  scope: Namespaced
   versions:
   - name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: Task is the Schema for the tasks API
+        description: |-
+          PodTemplateApplyConfiguration represents a declarative configuration of the PodTemplate type for use
+          with apply.
         properties:
           apiVersion:
             description: |-
@@ -36,10 +38,14 @@ spec:
             type: string
           metadata:
             type: object
-          spec:
-            description: TaskSpec defines the desired state of Task
+          template:
+            description: |-
+              PodTemplateSpecApplyConfiguration represents a declarative configuration of the PodTemplateSpec type for use
+              with apply.
             properties:
-              template:
+              metadata:
+                type: object
+              spec:
                 description: |-
                   PodSpecApplyConfiguration represents a declarative configuration of the PodSpec type for use
                   with apply.
@@ -2588,11 +2594,6 @@ spec:
                     type: array
                 type: object
             type: object
-          status:
-            description: TaskStatus defines the observed state of Task
-            type: object
         type: object
     served: true
     storage: true
-    subresources:
-      status: {}

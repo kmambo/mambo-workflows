@@ -28,8 +28,8 @@ BUNDLE_METADATA_OPTS ?= $(BUNDLE_CHANNELS) $(BUNDLE_DEFAULT_CHANNEL)
 # This variable is used to construct full image tags for bundle and catalog images.
 #
 # For example, running 'make bundle-build bundle-push catalog-build catalog-push' will build and push both
-# kmambo.io/kmambo-webhooks-bundle:$VERSION and kmambo.io/kmambo-webhooks-catalog:$VERSION.
-IMAGE_TAG_BASE ?= kmambo.io/kmambo-webhooks
+# kmambo.io/kmambo-workflows-bundle:$VERSION and kmambo.io/kmambo-workflows-catalog:$VERSION.
+IMAGE_TAG_BASE ?= kmambo.io/kmambo-workflows
 
 # BUNDLE_IMG defines the image:tag used for the bundle.
 # You can use it as an arg. (E.g make bundle-build BUNDLE_IMG=<some-registry>/<project-name-bundle>:<tag>)
@@ -190,8 +190,8 @@ CONTROLLER_GEN ?= $(LOCALBIN)/controller-gen
 ENVTEST ?= $(LOCALBIN)/setup-envtest
 
 ## Tool Versions
-KUSTOMIZE_VERSION ?= v5.0.1
-CONTROLLER_TOOLS_VERSION ?= v0.12.0
+KUSTOMIZE_VERSION ?= v5.3.0
+CONTROLLER_TOOLS_VERSION ?= v0.14.0
 
 .PHONY: kustomize
 kustomize: $(KUSTOMIZE) ## Download kustomize locally if necessary. If wrong version is installed, it will be removed before downloading.

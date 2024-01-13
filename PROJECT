@@ -8,12 +8,11 @@ layout:
 plugins:
   manifests.sdk.operatorframework.io/v2: {}
   scorecard.sdk.operatorframework.io/v2: {}
-projectName: kmambo-webhooks
+projectName: kmambo-workflows
 repo: github.com/kmambo/kmambo.github.io
 resources:
 - api:
     crdVersion: v1
-    namespaced: true
   controller: true
   domain: kmambo.io
   group: workflow

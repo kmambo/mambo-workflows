@@ -1,0 +1,53 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.12.0
+  name: componentstatusapplyconfigurations.workflow.kmambo.io
+spec:
+  group: workflow.kmambo.io
+  names:
+    kind: ComponentStatusApplyConfiguration
+    listKind: ComponentStatusApplyConfigurationList
+    plural: componentstatusapplyconfigurations
+    singular: componentstatusapplyconfiguration
+  scope: Namespaced
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: ComponentStatusApplyConfiguration represents a declarative configuration
+          of the ComponentStatus type for use with apply.
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          conditions:
+            items:
+              description: ComponentConditionApplyConfiguration represents a declarative
+                configuration of the ComponentCondition type for use with apply.
+              properties:
+                error:
+                  type: string
+                message:
+                  type: string
+                status:
+                  type: string
+                type:
+                  description: Type and constants for component health validation.
+                  type: string
+              type: object
+            type: array
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+        type: object
+    served: true
+    storage: true
