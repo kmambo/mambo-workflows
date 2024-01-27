@@ -285,3 +285,16 @@ catalog-build: opm ## Build a catalog image.
 .PHONY: catalog-push
 catalog-push: ## Push a catalog image.
 	$(MAKE) docker-push IMG=$(CATALOG_IMG)
+
+.PHONY: cert-manager
+cert-manager:
+	helm install \
+      cert-manager jetstack/cert-manager \
+      --namespace cert-manager \
+      --create-namespace \
+      --version v1.13.3 \
+      --set installCRDs=true
+
+uncert-manager:
+	helm --namespace cert-manager delete cert-manager
+	$(KUBECTL) delete namespace cert-manager
