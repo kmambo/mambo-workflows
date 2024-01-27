@@ -1,0 +1,51 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: ClusterServiceVersion
+metadata:
+  annotations:
+    alm-examples: '[]'
+    capabilities: Basic Install
+  name: kmambo-workflows.v0.0.0
+  namespace: placeholder
+spec:
+  apiservicedefinitions: {}
+  customresourcedefinitions:
+    owned:
+    - description: Task is the Schema for the tasks API
+      displayName: Task
+      kind: Task
+      name: tasks.workflow.kmambo.io
+      version: v1alpha1
+    - description: Workflow is the Schema for the workflows API
+      displayName: Workflow
+      kind: Workflow
+      name: workflows.workflow.kmambo.io
+      version: v1alpha1
+  description: controller
+  displayName: controller
+  icon:
+  - base64data: ""
+    mediatype: ""
+  install:
+    spec:
+      deployments: null
+    strategy: ""
+  installModes:
+  - supported: false
+    type: OwnNamespace
+  - supported: false
+    type: SingleNamespace
+  - supported: false
+    type: MultiNamespace
+  - supported: true
+    type: AllNamespaces
+  keywords:
+  - x
+  - "y"
+  - z
+  links:
+  - name: Kmambo Workflows
+    url: https://kmambo-workflows.domain
+  maturity: alpha
+  provider:
+    name: kmambo.io
+  version: 0.0.0
